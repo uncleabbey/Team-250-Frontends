@@ -84,7 +84,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 } 
-
  article,
 aside,
 details,
@@ -679,7 +678,6 @@ a.bottom-text {
 #navbar {
   display: flex;
   background-color: #d8f3b3;
-
   width: 100%;
 }
 #li {
@@ -695,14 +693,12 @@ a.bottom-text {
   display: block;
   padding: 2vw;
 }
-
 .nav {
   width: 100vw;
   background-color: #d8f3b3;
   display: flex;
 }
 #ul {
-  display: block;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -726,7 +722,6 @@ a.bottom-text {
   font-size: 28px;
   font-weight: 300;
   flex: 1;
-
   margin: 0;
   padding: 0;
   border: 0;
@@ -745,7 +740,6 @@ a.bottom-text {
     margin-bottom: 20px;
   }
 }
-
 .collection-sort {
   display: flex;
   flex-direction: column;
