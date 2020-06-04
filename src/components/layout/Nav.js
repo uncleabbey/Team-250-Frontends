@@ -1,9 +1,12 @@
+/* eslint-disable sort-imports */
+
 /* eslint-disable react/prop-types */
 /* eslint-disable no-ternary */
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';
 import initials from './Helper';
+import Cart from './ShoppingCart';
 import { logout } from '../../actions/auth';
 
 
@@ -13,11 +16,38 @@ const loggedOut = (
     <Link to="/signup/customer"><button className="login-btn reg-second">Signup</button></Link>
 </div>
 );
+
 const LoggedIn = (props) => (
   <div className="login">
     <Link to={'/dashboard/user'}><span>{initials(`${props.users.first_name} ${props.users.first_name}` || props.users.business_name)}</span></Link>
     <button className="login-btn" onClick={props.handleClick}>Logout</button>
-  </div>);
+  </div>
+);
+
+const NavListItem = (props) => (
+    <li className="nav-item nav-link">
+        <NavLink
+          to={props.to}
+          activeStyle={{ color: '#00ad45', fontWeight: 'bolder' }}>
+            {props.name}
+        </NavLink>
+  </li>
+);
+
+const NavList = () => (
+  <ul className="navbar-nav mr-auto">
+    <NavListItem to={'/home'} name="Home" />
+    <NavListItem to={'/products'} name="Products" />
+    <NavListItem to={'/about'} name="About Us" />
+    <NavListItem to={'/contact'} name="Contact Us" />
+  </ul>
+);
+
+const SearchForm = () => (
+  <form className="form-inline my-2 my-lg-0">
+      <input className="form-control mr-sm-2" type="search" placeholder="Search........" aria-label="Search" />
+  </form>
+);
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -34,37 +64,10 @@ const Nav = () => {
     <span className="navbar-toggler-icon"></span>
   </button>
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav mr-auto">
-        <li className="nav-item nav-link">
-          <NavLink
-          to={'/home'}
-          activeStyle={{ color: '#00ad45', fontWeight: 'bolder' }}>
-            Home
-          </NavLink>
-        </li>
-        <li className="nav-item nav-link">
-          <NavLink
-          to={'/products'}activeStyle={{ color: '#00ad45', fontWeight: 'bolder' }}>
-            Products
-          </NavLink>
-        </li>
-        <li className="nav-item nav-link">
-          <NavLink
-          to={'/about'}activeStyle={{ color: '#00ad45', fontWeight: 'bolder' }}>
-            About Us
-          </NavLink>
-        </li>
-        <li className="nav-item nav-link">
-          <NavLink
-          to={'/contact'}activeStyle={{ color: '#00ad45', fontWeight: 'bolder' }}>
-            Contact Us
-          </NavLink>
-        </li>
-      </ul>
-      <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search........" aria-label="Search" />
-    </form>
-          {isAuthenticated ? <LoggedIn users = {user} handleClick={handleClick} /> : loggedOut }
+      <NavList />
+      <SearchForm />
+      <Cart />
+      {isAuthenticated ? <LoggedIn users = {user} handleClick={handleClick} /> : loggedOut }
     </div>
     </div>
   );

@@ -1,3 +1,23 @@
+.cart-container {
+  width: 40px;
+}
+
+.cart-img {
+  width: 40px;
+  height: 35px;
+  margin: 15px 0 0 0;
+}
+
+.cart-number {
+  color: #ef3054;
+  font-weight: bolder;
+  position: relative;
+  bottom: 40px;
+  left: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  background: #fff;
+}
 .login  {
   margin: 0 10px;
 }
@@ -20,7 +40,7 @@
 }
 .login-btn {
   color: white;
-  background: #ef3054;
+  background: #00ad45;
   border: 0;
   outline: 0;
   border-radius: 5px;
