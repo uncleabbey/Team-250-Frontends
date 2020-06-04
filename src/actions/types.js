@@ -1,8 +1,10 @@
-export const GET_LEADS = 'GET_LEADS';
-export const GET_LEAD_ID = 'GET_LEAD_ID';
-export const DELETE_LEAD = 'DELETE_LEAD';
-export const ADD_LEAD = 'ADD_LEAD';
-export const EDIT_LEAD = 'EDIT_LEAD';
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const GET_PRODUCT_ID = 'GET_PRODUCT_ID';
+export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const GET_PAGE_NO = 'GET_PAGE_NO';
+export const LOADING = 'LOADING';
+export const EDIT_PRODUCT = 'EDIT_PRODUCT';
 export const GET_ERRORS = 'GET_ERRORS';
 export const CREATE_MESSAGE = 'CREATE_MESSAGE';
 export const USER_LOADING = 'USER_LOADING';
