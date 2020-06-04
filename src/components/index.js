@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Rout } from 'react-router-dom';
+// eslint-disable-next-line sort-imports
 import App from './app';
 
 ReactDOM.render(
-  <Rout>
-    <App />
-  </Rout>,
-  document.getElementById('root')
+    <App />,
+    document.getElementById('root')
 );
