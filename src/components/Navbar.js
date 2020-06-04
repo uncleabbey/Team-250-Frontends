@@ -1,23 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import locations from './location';
 import min from './Items';
 
 class Navbar extends Component {
-  productChange = () => {
-    // this.setState({ filterProduct: e.target.value });
-    const val = this.myValue.value;
-    this.props.filterUpdate(val);
-  };
-
   renderItems = (link) => (
     <div key={link.id}>
       <div className="">
         <ul id="ul">
           <li id="li">
-            <a id="a" key={link.id} className="head">
-              {link.item}
-            </a>
+            <span id="a" key={link.id} className="head">
+              <NavLink to={link.link} activeStyle={{ color: '#00ad45', fontWeight: 'bolder' }}>{link.item}</NavLink>
+            </span>
           </li>
         </ul>
       </div>
@@ -27,7 +22,7 @@ class Navbar extends Component {
   render() {
     return (
       <div className="">
-        <a className="nav" key={min.id}>
+        <div className="nav" key={min.id}>
           {min.map((item) => this.renderItems(item))}
           <nav className="product-filter">
             <div className="sort">
@@ -49,7 +44,7 @@ class Navbar extends Component {
               </select>
             </div>
           </nav>
-        </a>
+        </div>
       </div>
     );
   }

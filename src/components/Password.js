@@ -1,9 +1,11 @@
+/* eslint-disable sort-imports */
 import React, { Component } from 'react';
 import {
-  faEnvelopeOpen, faLock, faPenSquare, faUserCircle
+  faEnvelopeOpen, faLock
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import { SectionCustomer, SectionOne } from '../containers/SignupSections/SectionOne';
+import { SectionFarmer } from './Login';
 
 class Password extends Component {
   render() {
@@ -11,30 +13,11 @@ class Password extends Component {
       <div className="main-bg ">
         <div className="sub-main">
           <div className="vertical-tab">
-            <div id="section1" className="section-icon">
-              <input type="radio" name="sections" id="option1" />
-              <Link to="/login">
-                <label htmlFor="option1" className="icon-left">
-                  <span className="fa fa-user-circle" aria-hidden="true">
-                    <FontAwesomeIcon icon={faUserCircle} />
-                  </span>
-                  Login
-                </label>
-              </Link>
-            </div>
-            <div id="section2" className="section-icon">
-              <input type="radio" name="sections" id="option2" />
-              <Link to="/signup">
-                <label htmlFor="option2" className="icon-left">
-                  <span className="fa fa-pencil-square" aria-hidden="true">
-                    <FontAwesomeIcon icon={faPenSquare} />
-                  </span>
-                  Register
-                </label>
-              </Link>
-            </div>
+            <SectionOne />
+            <SectionFarmer />
+            <SectionCustomer />
             <div id="section3" className="section-icon">
-              <input type="radio" name="sections" id="option3" checked />
+              <input type="radio" name="sections" id="option3" defaultChecked />
               <label htmlFor="option3" className="icon-left">
                 <span className="fa fa-lock" aria-hidden="true">
                   <FontAwesomeIcon icon={faLock} />

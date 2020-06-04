@@ -1,6 +1,6 @@
 export default [
-  { id: 1, item: 'Home' },
-  { id: 2, item: 'About Us' },
-  { id: 3, item: 'Login' },
-  { id: 4, item: 'Contact Us' }
+  { id: 1, item: 'Home', link: '/home' },
+  { id: 2, item: 'About Us', link: '/about' },
+  { id: 3, item: 'Contact Us', link: '/contact' },
+  { id: 4, item: 'Login', link: '/login' }
 ];
