@@ -32,7 +32,7 @@ export default (state = initialState, action) => {
         ...state,
         count: action.payload.count,
         loading: false,
-        products: action.payload.results
+        products: action.payload
       };
     case GET_PAGE_NO:
       return {
