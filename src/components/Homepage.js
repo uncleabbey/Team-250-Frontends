@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
+// import PropTypes from 'prop-type';
 import production from './product';
 
-class Homepage extends Component {
-  renderProduct = (products) => (
-    <div className="product-card" key={products.id}>
-      <div className="product-image">
+
+const RenderProduct = ({ products }) => (
+  <div className="product-card" key={products.id}>
+    <div className="product-image">
         <img src={products.src} />
       </div>
       <div className="product-info">
@@ -12,19 +14,11 @@ class Homepage extends Component {
         <h6>{products.amount}</h6>
       </div>
     </div>
-  );
+);
+const ourProduct = production.map((good) => <RenderProduct key={good.id} products={good} />);
 
-  state = {};
-
-  render() {
-    const { filterText } = this.props;
-    const ourProduct = production
-      .filter((good) => good.name.toLowerCase().indexOf(filterText.toLowerCase()) >= 0)
-      .map((good) => this.renderProduct(good));
-
-    return (
-      <div id="body">
-        <p id="fill">filterText value is: {this.props.filterText}</p>
+const Homepage = () => (
+    <div id="body">
         <nav className="product-filter">
           <h1 id="h1">Available Produce</h1>
         </nav>
@@ -35,8 +29,6 @@ class Homepage extends Component {
           </div>
         </section>
       </div>
-    );
-  }
-}
+);
 
 export default Homepage;

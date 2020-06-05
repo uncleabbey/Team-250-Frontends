@@ -19,7 +19,9 @@ const loggedOut = (
 
 const LoggedIn = (props) => (
   <div className="login">
-    <Link to={'/dashboard/user'}><span>{initials(`${props.users.first_name} ${props.users.first_name}` || props.users.business_name)}</span></Link>
+    <Link to={'/dashboard/user'}>
+      <span>{initials(props.users.email)}</span>
+    </Link>
     <button className="login-btn" onClick={props.handleClick}>Logout</button>
   </div>
 );

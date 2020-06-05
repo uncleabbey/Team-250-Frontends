@@ -32,7 +32,7 @@ export const farmerRegister = ({
     phone_number: phoneNumber
   });
   axios
-    .post('http://localhost:8000/api/auth/signup/farmer', body, config)
+    .post('https://zerohunger-backend.herokuapp.com/api/auth/signup/farmer', body, config)
     .then((res) => {
       dispatch({
         payload: res.data,
@@ -66,7 +66,7 @@ export const customerRegister = ({
     phone_number: phoneNumber
   });
   axios
-    .post('http://localhost:8000/api/auth/signup/customer', body, config)
+    .post('https://zerohunger-backend.herokuapp.com/api/auth/signup/customer', body, config)
     .then((res) => {
       dispatch({
         payload: res.data,
@@ -91,7 +91,7 @@ export const login = ({ email, password }) => (dispatch) => {
   // Request Body
   const body = JSON.stringify({ email, password });
   axios
-    .post('http://localhost:8000/api/auth/login', body, config)
+    .post('https://zerohunger-backend.herokuapp.com/api/auth/login', body, config)
     .then((res) => {
       dispatch({
         payload: res.data,
@@ -109,7 +109,7 @@ export const login = ({ email, password }) => (dispatch) => {
 // LOGOUT
 export const logout = () => (dispatch, getState) => {
   axios
-    .post('http://localhost:8000/api/auth/logout', null, tokenConfig(getState))
+    .post('https://zerohunger-backend.herokuapp.com/api/auth/logout', null, tokenConfig(getState))
     .then(() => {
       dispatch({
         type: LOGOUT_SUCCESS
@@ -128,7 +128,7 @@ export const loadUser = () => (dispatch, getState) => {
   });
 
   axios
-    .get('http://localhost:8000/api/auth/user', tokenConfig(getState))
+    .get('https://zerohunger-backend.herokuapp.com/api/auth/user', tokenConfig(getState))
     .then((res) => {
       dispatch({
         payload: res.data,
