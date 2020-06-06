@@ -94,7 +94,7 @@ const AddProduct = () => {
 
   return (
     <div className="form-container">
-      <h2 className="text-center text-white mt-2">Add Projects</h2>
+      <h2 className="text-center text-white mt-2">Add Product</h2>
       <form className="add-product-form" onSubmit={handleSubmit}>
         <Input type="text" onChange={handleChange} value={name} name="name" label="Name" />
         <Input type="number" onChange={handleChange} value={price} name="price" label="Price" />

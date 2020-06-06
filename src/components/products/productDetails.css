@@ -1,7 +1,6 @@
 
 .product-img {
   max-width: 100%;
-  height: 500px;
 }
 
 .preview {
@@ -56,10 +55,10 @@
 }
 .card {
   color: white;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   background: #043927;
-  padding: 3em;
+  padding: 1.5em;
   line-height: 1.5em; }
 
 @media screen and (min-width: 997px) {

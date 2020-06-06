@@ -16,7 +16,7 @@ const RenderProduct = ({ products }) => (
       <img src={products.product_img} />
     </div>
     <div className="product-info">
-      <Link to={`/product/${products.id}`}>
+      <Link to={`/products/${products.id}`}>
         <h5 id="h5">{products.name}</h5>
       </Link>
       <h6> ₦{products.price} </h6>
@@ -31,10 +31,12 @@ const Homepage = () => {
   const pageSize = useSelector((state) => state.product.pageSize);
   const page = useSelector((state) => state.product.page);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getProducts(page));
   }, [getProducts, page]);
   const paginate = (pageNumber) => dispatch(setCurrentPage(pageNumber));
+
   const ourProduct = products.map((good) => <RenderProduct key={good.id} products={good} />);
   return (
     <div id="body">
@@ -42,6 +44,7 @@ const Homepage = () => {
         <h1 id="h1"> Available Produce </h1>
       </nav>
       <section>
+        <Pagination postsPerPage={pageSize} totalPosts={count} paginate={paginate} />
         <div>
           {loading && <Loader />}
           <div className="products">

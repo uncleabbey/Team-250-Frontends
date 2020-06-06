@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 /* eslint-disable max-statements */
 /* eslint-disable sort-imports */
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -27,6 +28,8 @@ class Alerts extends Component {
     if (message !== prevProps.message) {
       if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
       if (message.addProduct) alert.success(message.addProduct);
+      if (message.addCart) alert.success(message.addCart);
+      if (message.removeCart) alert.success(message.removeCart);
     }
   }
 

@@ -12,7 +12,7 @@ import {
 
 const initialState = {
   count: 0,
-  loading: false,
+  loading: true,
   page: 1,
   pageSize: 20,
   product: {},
@@ -32,7 +32,7 @@ export default (state = initialState, action) => {
         ...state,
         count: action.payload.count,
         loading: false,
-        products: action.payload
+        products: action.payload.results
       };
     case GET_PAGE_NO:
       return {

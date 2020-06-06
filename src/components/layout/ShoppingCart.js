@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-const Cart = () => {
-  const [cart] = useState([]);
+const ShoppingCart = () => {
+  const cart = useSelector((state) => state.auth.cart);
+
   return (
     <div className="cart-container">
     <img
@@ -14,4 +16,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default ShoppingCart;

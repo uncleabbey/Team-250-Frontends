@@ -6,7 +6,10 @@ import './productDetails.css';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { addToCart } from '../../actions/order';
 import { getProductById } from '../../actions/product';
+// eslint-disable-next-line sort-imports
+import Loader from '../layout/Loader';
 
 
 const Image = ({ src, name }) => (
@@ -23,7 +26,7 @@ const Images = ({ src, name }) => (
 
 
 const Details = ({
-  name, description, price, quantity, setQuantity
+  name, description, price, quantity, setQuantity, onClick
 }) => (
   <div className="details col-md-6">
     <h3 className="product-title">{name}</h3>
@@ -60,7 +63,7 @@ const Details = ({
     </div>
     </div>
     <div className="action">
-      <button className="add-to-cart btn btn-default" type="button">
+      <button onClick={onClick} className="add-to-cart btn btn-default" type="button">
         add to cart
       </button>
     </div>
@@ -68,36 +71,47 @@ const Details = ({
 );
 
 const ProductDetails = (props) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const product = useSelector((state) => state.product.product);
+  const loading = useSelector((state) => state.product.loading);
   useEffect(() => {
     const { id } = props.match.params;
     dispatch(getProductById(id));
   }, []);
+  const handleCart = () => {
+    const data = { product, quantity };
+    dispatch(addToCart(data));
+  };
   return (
-    <div className="container prod-det">
-
-      <div className="card">
-        <NavLink to="/home">
-          <button type="button" className="btn btn-primary">Go Back to List Product</button>
-        </NavLink>
-        <div className="container-fliud">
-          <div className="wrapper row">
-            <div className="preview col-md-6">
-            <Images src={product.product_img} name={product.name} />
+    <>
+      {
+        loading ? <Loader /> : (
+      <div className="container prod-det">
+        <div className="card">
+          <NavLink to="/home">
+            <button type="button" className="btn btn-primary">Go Back to List Product</button>
+          </NavLink>
+          <div className="container-fliud">
+            <div className="wrapper row">
+              <div className="preview col-md-6">
+              <Images src={product.product_img} name={product.name} />
+              </div>
+              <Details
+              quantity={quantity}
+              setQuantity={setQuantity}
+              name={product.name}
+              description={product.description}
+              price={product.price}
+              onClick={handleCart}
+              />
             </div>
-            <Details
-            quantity={quantity}
-            setQuantity={setQuantity}
-            name={product.name}
-            description={product.description}
-            price={product.price}
-          />
           </div>
         </div>
       </div>
-    </div>
+        )
+      }
+    </>
   );
 };
 

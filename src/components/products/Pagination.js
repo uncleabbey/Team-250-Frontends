@@ -2,7 +2,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+const Pagination = ({
+  postsPerPage, totalPosts, paginate
+}) => {
   const pageNumbers = [];
   // eslint-disable-next-line no-magic-numbers
   for (let num = 1; num <= Math.ceil(totalPosts / postsPerPage); num++) {
@@ -10,7 +12,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   }
   return (
     <nav>
-      <ul className="pagination">
+      <ul className="pagination pagination-lg justify-content-center">
         {pageNumbers.map((number) => (
           <li key={number} className="page-item">
             <span onClick={() => paginate(number)} className="page-link">

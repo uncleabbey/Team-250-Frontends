@@ -21,7 +21,7 @@ export const getProducts = (currentPage) => (dispatch, getState) => {
   const url = `https://zerohunger-backend.herokuapp.com/api/products?page=${currentPage}`;
   axios.get(url, tokenConfig(getState)).then((res) => {
     dispatch({
-      payload: res.data.results,
+      payload: res.data,
       type: GET_PRODUCTS
     });
   }).catch((error) => {
