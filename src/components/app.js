@@ -17,10 +17,13 @@ import FarmerSignup from './Accounts/FarmerSignup';
 import CustomerSignup from './Accounts/CustomerSignup';
 import Nav from './layout/Nav';
 import Page404 from './layout/Page404';
+import AddProduct from './products/AddProduct';
+import PrivateRoute from './layout/PrivateRoute';
+import ProductDetails from './products/ProductDetails';
 
 const alertOptions = {
   position: 'top center',
-  timeout: 3000
+  timeout: 5000
 };
 
 class App extends Component {
@@ -40,10 +43,12 @@ class App extends Component {
                 <Switch>
                   <Route path="/" exact component={Hompage} />
                   <Route path="/home" exact component={Hompage} />
+                  <Route path="/product/:id" exact component={ProductDetails} />
                   <Route path="/login" exact component={Login} />
                   <Route path="/signup/farmer" exact component={FarmerSignup} />
                   <Route path="/signup/customer" exact component={CustomerSignup} />
                   <Route path="/forgetpsw" exact component={Password} />
+                  <PrivateRoute exact path="/product/add" component={AddProduct} />
                   <Route component={Page404} />
                 </Switch>
                 <Footer />

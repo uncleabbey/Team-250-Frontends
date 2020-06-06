@@ -1,7 +1,32 @@
+.form-container {
+  width: 60%;
+  margin: 4em auto;
+  background-color: #00ad45;
+  padding: 1em;
+}
+.add-product-form {
+  background: #fff;
+  width: 50%;
+  margin: 2em auto;
+  padding: 1em;
+}
+.form-group {
+  margin: 10px auto;
+  width: 70%;
+}
+.form__input {
+  background: #ccc;
+}
+.form-text-area {
+  height: 600px;
+}
+.add-btn {
+  text-align: center;
+}
 .loader {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid #60686e;
     /* Blue */
     border-radius: 50%;
     width: 120px;

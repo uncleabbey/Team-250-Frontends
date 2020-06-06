@@ -11,6 +11,7 @@ import {
 
 const initialState = {
   isAuthenticated: null,
+  isFarmer: null,
   isLoading: false,
   token: localStorage.getItem('token'),
   user: null
@@ -28,6 +29,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: true,
+        isFarmer: action.payload.isFarmer,
         isLoading: false,
         user: action.payload
       };
@@ -38,6 +40,7 @@ export default (state = initialState, action) => {
         ...state,
         ...action.payload,
         isAuthenticated: true,
+        isFarmer: action.payload.isFarmer,
         isLoading: false
       };
     case AUTH_ERROR:
@@ -48,6 +51,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: false,
+        isFarmer: false,
         isLoading: false,
         token: null,
         user: null

@@ -4,18 +4,22 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getProducts, setCurrentPage } from '../actions/product';
 // import PropTypes from 'prop-type';
 import Pagination from './products/Pagination';
 import Loader from './layout/Loader';
 
 const RenderProduct = ({ products }) => (
-  <div className="product-card" key={products.id}>
+  <div className="product-card">
     <div className="product-image">
-      <img src={products.src} />
+      <img src={products.product_img} />
     </div>
     <div className="product-info">
-      <h5 id="h5">{products.name}</h5> <h6> {products.amount} </h6>
+      <Link to={`/product/${products.id}`}>
+        <h5 id="h5">{products.name}</h5>
+      </Link>
+      <h6> ₦{products.price} </h6>
     </div>
   </div>
 );
