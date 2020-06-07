@@ -1,5 +1,5 @@
 /* eslint-disable sort-imports */
-import './app.css';
+import './dash.css';
 import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -10,6 +10,7 @@ import Hompage from './Homepage';
 import { Login } from './Login';
 // import Navbar from './Navbar';
 import Password from './Password';
+import Dashboard from './Dashoard';
 import store from '../store';
 import Alerts from './layout/Alerts';
 import { loadUser } from '../actions/auth';
@@ -17,6 +18,7 @@ import FarmerSignup from './Accounts/FarmerSignup';
 import CustomerSignup from './Accounts/CustomerSignup';
 import Nav from './layout/Nav';
 import Page404 from './layout/Page404';
+import Centerdash from './Centerdash';
 
 const alertOptions = {
   position: 'top center',
@@ -56,9 +58,11 @@ class App extends Component {
                     <Hompage filterText={this.state.filterText} />
                   </Route>
                   <Route path="/login" exact component={Login} />
+                  <Route path="/dashboard" exact component={Dashboard} />
                   <Route path="/signup/farmer" exact component={FarmerSignup} />
                   <Route path="/signup/customer" exact component={CustomerSignup} />
                   <Route path="/forgetpsw" exact component={Password} />
+                  <Route path="/center" component={Centerdash} />
                   <Route component={Page404} />
                 </Switch>
                 <Footer />
