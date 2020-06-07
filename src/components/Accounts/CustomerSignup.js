@@ -5,7 +5,8 @@ import {
 }
   from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { customerRegister } from '../../actions/auth';
 import { createMessage } from '../../actions/messages';
 
@@ -20,7 +21,6 @@ const RegisterCustomer = () => {
     email: '', firstName: '', lastName: '', location: '', password1: '', password2: '', phoneNumber: ''
   });
   const dispatch = useDispatch();
-  // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const handleChange = (event) => {
     setInputs({ ...inputs, [event.target.name]: event.target.value });
   };
@@ -62,7 +62,12 @@ const RegisterCustomer = () => {
   );
 };
 
-const CustomerSignup = () => (
+const CustomerSignup = () => {
+  const isAuthenticated = useSelector(
+    (state) => state.auth.isAuthenticated
+  );
+  if (isAuthenticated) return <Redirect to="/home" />;
+  return (
     <div className="main-bg ">
           <div className="sub-main">
             {/* <!-- vertical tabs --> */}
@@ -76,6 +81,7 @@ const CustomerSignup = () => (
             <div className="clear"></div>
           </div>
         </div>
-);
+  );
+};
 
 export default CustomerSignup;

@@ -24,17 +24,6 @@ const alertOptions = {
 };
 
 class App extends Component {
-  state = {
-    filterText: ''
-  };
-
-  filterUpdate = (value) => {
-    // eslint-disable-next-line no-invalid-this
-    this.setState({
-      filterText: value
-    });
-  };
-
   componentDidMount() {
     store.dispatch(loadUser());
   }
@@ -49,12 +38,8 @@ class App extends Component {
                 <Nav />
                 <Alerts />
                 <Switch>
-                  <Route path="/" exact>
-                    <Hompage filterText={this.state.filterText} />
-                  </Route>
-                  <Route path="/home" exact>
-                    <Hompage filterText={this.state.filterText} />
-                  </Route>
+                  <Route path="/" exact component={Hompage} />
+                  <Route path="/home" exact component={Hompage} />
                   <Route path="/login" exact component={Login} />
                   <Route path="/signup/farmer" exact component={FarmerSignup} />
                   <Route path="/signup/customer" exact component={CustomerSignup} />
