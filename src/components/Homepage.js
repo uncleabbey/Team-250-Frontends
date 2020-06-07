@@ -4,25 +4,12 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { getProducts, setCurrentPage } from '../actions/product';
 // import PropTypes from 'prop-type';
 import Pagination from './products/Pagination';
 import Loader from './layout/Loader';
+import RenderProduct from './products/RenderProduct';
 
-const RenderProduct = ({ products }) => (
-  <div className="product-card">
-    <div className="product-image">
-      <img src={products.product_img} />
-    </div>
-    <div className="product-info">
-      <Link to={`/products/${products.id}`}>
-        <h5 id="h5">{products.name}</h5>
-      </Link>
-      <h6> ₦{products.price} </h6>
-    </div>
-  </div>
-);
 
 const Homepage = () => {
   const products = useSelector((state) => state.product.products);
@@ -47,6 +34,7 @@ const Homepage = () => {
         <Pagination postsPerPage={pageSize} totalPosts={count} paginate={paginate} />
         <div>
           {loading && <Loader />}
+          {!loading && products.length === 0 ? <h3 className="text-center">Sorry Search Keyword not in the Database</h3> : ''}
           <div className="products">
             {!products ? <p className="text-danger">No Product yet</p> : ourProduct}
           </div>

@@ -6,7 +6,8 @@ import {
   GET_PAGE_NO,
   GET_PRODUCTS,
   GET_PRODUCT_ID,
-  LOADING
+  LOADING,
+  SEARCH_PRODUCT
 } from '../actions/types';
 
 
@@ -28,6 +29,13 @@ export default (state = initialState, action) => {
         loading: true
       };
     case GET_PRODUCTS:
+      return {
+        ...state,
+        count: action.payload.count,
+        loading: false,
+        products: action.payload.results
+      };
+    case SEARCH_PRODUCT:
       return {
         ...state,
         count: action.payload.count,

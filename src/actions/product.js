@@ -8,7 +8,8 @@ import {
   GET_PAGE_NO,
   GET_PRODUCT_ID,
   GET_PRODUCTS,
-  LOADING
+  LOADING,
+  SEARCH_PRODUCT
 } from './types';
 import { returnErrors, createMessage } from './messages';
 import tokenConfig from './helper';
@@ -28,6 +29,7 @@ export const getProducts = (currentPage) => (dispatch, getState) => {
     dispatch(returnErrors(error.response, error.response.status));
   });
 };
+
 
 export const setCurrentPage = (page) => (dispatch) => {
   dispatch({
@@ -88,4 +90,20 @@ export const editProduct = (id, product) => (dispatch, getState) => {
       type: EDIT_PRODUCT
     });
   }).catch((error) => dispatch(returnErrors(error.response.data, error.response.status)));
+};
+
+// Search Product
+export const searchProducts = (currentPage, query) => (dispatch, getState) => {
+  dispatch({
+    type: LOADING
+  });
+  const url = `https://zerohunger-backend.herokuapp.com/api/products/filter?page=${currentPage}&search=${query}`;
+  axios.get(url, tokenConfig(getState)).then((res) => {
+    dispatch({
+      payload: res.data,
+      type: SEARCH_PRODUCT
+    });
+  }).catch((error) => {
+    dispatch(returnErrors(error.response, error.response.status));
+  });
 };

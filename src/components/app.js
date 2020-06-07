@@ -25,7 +25,7 @@ import CartItems from './orders/Cart';
 
 const alertOptions = {
   position: 'top center',
-  timeout: 5000
+  timeout: 4000
 };
 
 class App extends Component {
