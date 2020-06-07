@@ -1,29 +1,36 @@
+.active-cyan .fa, .active-cyan-4 .fa {
+  color: #4dd0e1;
+}
+.active-cyan-4 input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #4dd0e1;
+    box-shadow: 0 1px 0 0 #4dd0e1;
+}
 .paginate {
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
 .form-container {
-  width: 60%;
-  margin: 4em auto;
-  background-color: #00ad45;
-  padding: 1em;
+    width: 60%;
+    margin: 4em auto;
+    background-color: #00ad45;
+    padding: 1em;
 }
 .add-product-form {
-  background: #fff;
-  width: 50%;
-  margin: 2em auto;
-  padding: 1em;
+    background: #fff;
+    width: 50%;
+    margin: 2em auto;
+    padding: 1em;
 }
 .form-group {
-  margin: 10px auto;
-  width: 70%;
+    margin: 10px auto;
+    width: 70%;
 }
 .form__input {
-  background: #ccc;
+    background: #ccc;
 }
 .form-text-area {
-  height: 600px;
+    height: 600px;
 }
 .add-btn {
   text-align: center;
@@ -908,10 +915,12 @@ a.bottom-text {
     flex: 1 16%;
     background-color: #fff;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    max-width: 16%;
 }
 
 .product-image img {
-    width: 100%;
+    width: 350px;
+    height: 250px;
 }
 
 .product-info {

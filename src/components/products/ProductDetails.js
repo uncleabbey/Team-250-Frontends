@@ -61,11 +61,11 @@ const Details = ({
         +
     </button>
     </div>
-    </div>
     <div className="action">
       <button onClick={onClick} className="add-to-cart btn btn-default" type="button">
         add to cart
       </button>
+    </div>
     </div>
   </div>
 );

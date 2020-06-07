@@ -8,6 +8,7 @@ import React from 'react';
 import initials from './Helper';
 import ShoppingCart from './ShoppingCart';
 import { logout } from '../../actions/auth';
+import SearchForm from './SearchForm';
 
 
 const loggedOut = (
@@ -44,11 +45,6 @@ const NavList = () => (
   </ul>
 );
 
-const SearchForm = () => (
-  <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search........" aria-label="Search" />
-  </form>
-);
 
 const Nav = () => {
   const dispatch = useDispatch();
