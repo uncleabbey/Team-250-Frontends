@@ -1,3 +1,65 @@
+.active-cyan .fa,
+.active-cyan-4 .fa {
+  color: #4dd0e1;
+}
+.active-cyan-4 input[type='text']:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.paginate {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-container {
+  width: 60%;
+  margin: 4em auto;
+  background-color: #00ad45;
+  padding: 1em;
+}
+.add-product-form {
+  background: #fff;
+  width: 50%;
+  margin: 2em auto;
+  padding: 1em;
+}
+.form-group {
+  margin: 10px auto;
+  width: 70%;
+}
+.form__input {
+  background: #ccc;
+}
+.form-text-area {
+  height: 600px;
+}
+.add-btn {
+  text-align: center;
+}
+.loader-container {
+  height: calc(100vh - 146px);
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #60686e;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: calc(50vh - 153px) auto;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .cart-container {
   width: 40px;
 }
@@ -18,9 +80,11 @@
   border-radius: 10px;
   background: #fff;
 }
+
 .login {
   margin: 0 10px;
 }
+
 .login > a > span {
   margin-right: 20px;
   text-transform: uppercase;
@@ -30,6 +94,7 @@
   padding: 10px 15px;
   border-radius: 20px;
 }
+
 .verified {
   text-align: center;
   margin: auto;
@@ -38,6 +103,7 @@
 .logout {
   margin: 0 10px;
 }
+
 .login-btn {
   color: white;
   background: #00ad45;
@@ -174,6 +240,7 @@ table {
 }
 
 /* start editing from here */
+
 a {
   text-decoration: none;
 }
@@ -183,71 +250,83 @@ a {
 }
 
 /* text align right */
+
 .txt-lt {
   text-align: left;
 }
 
 /* text align left */
+
 .txt-center {
   text-align: center;
 }
 
 /* text align center */
+
 .float-rt {
   float: right;
 }
 
 /* float right */
+
 .float-lt {
   float: left;
 }
 
 /* float left */
+
 .clear {
   clear: both;
 }
 
 /* clear float */
+
 .pos-relative {
   position: relative;
 }
 
 /* Position Relative */
+
 .pos-absolute {
   position: absolute;
 }
 
 /* Position Absolute */
+
 .vertical-base {
   vertical-align: baseline;
 }
 
 /* vertical align baseline */
+
 .vertical-top {
   vertical-align: top;
 }
 
 /* vertical align top */
+
 nav.vertical ul li {
   display: block;
 }
 
 /* vertical menu */
+
 nav.horizontal ul li {
   display: inline-block;
 }
 
 /* horizontal menu */
+
 img {
   max-width: 100%;
 }
 
 /* //end reset */
 
-/* body {
+body {
   font-size: 100%;
   font-family: 'Roboto', sans-serif;
-} */
+}
 
 .main-bg {
   background: url('https://res.cloudinary.com/pauliski/image/upload/v1590257114/farmerwork_ysn1ae.jpg') no-repeat center;
@@ -260,6 +339,7 @@ img {
 }
 
 /* title */
+
 h1 {
   font-size: 3vw;
   color: #fff;
@@ -288,6 +368,7 @@ h1 {
 }
 
 /* vertical tabs */
+
 .vertical-tab {
   color: #333333;
   display: block;
@@ -361,8 +442,10 @@ label.icon-left span {
 /* //vertical tabs */
 
 /* form style */
+
 .sub-main form {
   background: #ffff;
+  padding: 2em;
 }
 
 .legend {
@@ -422,7 +505,7 @@ p.para-style-2 a {
 }
 
 .submit {
-  margin: 0 auto 0;
+  margin: 2.3em auto 0;
   background: #00ad45;
   border: none;
   cursor: pointer;
@@ -470,6 +553,7 @@ a.bottom-text {
 /* //copyright */
 
 /* responsive */
+
 @media (max-width: 1080px) {
   h1 {
     font-size: 4vw;
@@ -480,16 +564,13 @@ a.bottom-text {
   .sub-main {
     max-width: 900px;
   }
-
   .vertical-tab .section-icon article {
     min-width: 445px;
   }
-
   p.para-style-2 {
     font-size: 14px;
     margin-bottom: 1em;
   }
-
   p.para-style {
     margin-bottom: 0.7em;
     font-size: 14px;
@@ -500,18 +581,15 @@ a.bottom-text {
   .sub-main {
     max-width: 768px;
   }
-
   .vertical-tab .section-icon article {
     min-width: 400px;
     left: 175px;
   }
-
   .vertical-tab .section-icon label {
     width: 134px;
     font-size: 15px;
     padding: 34px 20px;
   }
-
   h1 {
     font-size: 5vw;
     padding: 3vw 1vw 1vw;
@@ -527,14 +605,12 @@ a.bottom-text {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-
   .image-style {
     float: none;
     width: 100%;
     min-height: 300px;
     order: 2;
   }
-
   .vertical-tab {
     float: none;
     width: 100%;
@@ -557,18 +633,15 @@ a.bottom-text {
   .sub-main {
     max-width: 500px;
   }
-
   .vertical-tab .section-icon article {
     min-width: 365px;
     left: 135px;
   }
-
   .vertical-tab .section-icon label {
     width: 114px;
     font-size: 15px;
     padding: 31px 10px;
   }
-
   h1 {
     font-size: 7vw;
   }
@@ -579,54 +652,42 @@ a.bottom-text {
     min-width: 291px;
     left: 109px;
   }
-
   .vertical-tab .section-icon label {
     width: 89px;
     font-size: 14px;
     padding: 26.8px 10px;
   }
-
   .sub-main {
     max-width: 400px;
   }
-
   .image-style {
     min-height: 220px;
   }
-
   .sub-main form {
     padding: 1.5em;
   }
-
   .submit {
     font-size: 14px;
   }
-
   .input input {
     font-size: 13px;
   }
-
   p.para-style {
     margin-bottom: 0.4em;
     font-size: 13px;
   }
-
   p.para-style-2 {
     font-size: 13px;
   }
-
   .input {
     padding: 12px 12px;
   }
-
   a.bottom-text {
     margin-top: 3em;
   }
-
   .last-btn {
     margin: 1em auto 0;
   }
-
   .copyright h2 {
     font-size: 12px;
   }
@@ -636,11 +697,9 @@ a.bottom-text {
   .sub-main {
     max-width: 320px;
   }
-
   .vertical-tab .section-icon article {
     position: static;
   }
-
   .vertical-tab .section-icon label {
     width: 100%;
     font-size: 14px;
@@ -649,34 +708,27 @@ a.bottom-text {
     border-bottom: 1px solid #dcdcdc;
     border-top: 1px solid #dcdcdc;
   }
-
   .vertical-tab input[name='sections']:checked + label {
     border-right: none;
     border-bottom: 1px solid #000;
     border-top: none;
   }
-
   .image-style {
     min-height: 190px;
   }
-
   h1 {
     font-size: 1.8em;
     padding: 6.5vw 1vw 3vw;
   }
-
   .copyright h2 {
     font-size: 13px;
   }
-
   .last-btn {
     margin: 1.5em auto 0;
   }
-
   p.para-style {
     margin-bottom: 1em;
   }
-
   p.para-style-2 {
     margin-bottom: 2em;
   }
@@ -686,11 +738,11 @@ a.bottom-text {
   .sub-main {
     max-width: 270px;
   }
-
   .vertical-tab .section-icon article {
     min-width: 270px;
   }
 }
+
 .copyright h2 {
   font-size: 15px;
   letter-spacing: 1px;
@@ -716,25 +768,30 @@ a.bottom-text {
   -ms-transition: 0.5s all;
   transition: 0.5s all;
 }
+
 @media (max-width: 640px) {
   .copyright h2 {
     font-size: 14px;
   }
 }
+
 .copyright h2 {
   font-size: 12px;
 }
+
 #navbar {
   display: flex;
   background-color: #d8f3b3;
   width: 100%;
 }
+
 #li {
   list-style-type: none;
   margin: 2vw 0;
   font-size: 3vh;
   margin: 0;
 }
+
 #a {
   text-decoration: none;
   color: black;
@@ -742,17 +799,20 @@ a.bottom-text {
   display: block;
   padding: 2vw;
 }
+
 .nav {
   width: 100vw;
   background-color: #d8f3b3;
   display: flex;
 }
+
 #ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
 }
+
 .vertical-tab .section-icon label.hello {
   font-size: 15px;
   margin: 0;
@@ -762,10 +822,12 @@ a.bottom-text {
 }
 
 /* productpage */
+
 .product-filter {
   display: flex;
   padding: 30px 0;
 }
+
 #h1 {
   color: #82ae46;
   font-size: 28px;
@@ -779,23 +841,28 @@ a.bottom-text {
   font: inherit;
   vertical-align: baseline;
 }
+
 .sort {
   display: flex;
   align-self: flex-end;
   margin-right: 0;
 }
+
 @media (max-width: 480px) {
   #h1 {
     margin-bottom: 20px;
   }
 }
+
 .collection-sort {
   display: flex;
   flex-direction: column;
 }
+
 .collection-sort:first-child {
   padding-right: 20px;
 }
+
 #label {
   color: #666;
   font-size: 10px;
@@ -810,33 +877,37 @@ a.bottom-text {
   font: inherit;
   vertical-align: baseline;
 }
+
 .products {
   display: flex;
   flex-wrap: wrap;
 }
+
 .product-card {
   display: flex;
   flex-direction: column;
-
   padding: 2%;
   flex: 1 16%;
-
   background-color: #fff;
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+  max-width: 16%;
 }
+
 .product-image img {
-  width: 100%;
+  width: 350px;
+  height: 250px;
 }
+
 .product-info {
   margin-top: auto;
   padding-top: 20px;
   text-align: center;
 }
+
 @media (max-width: 920px) {
   .product-card {
     flex: 1 21%;
   }
-
   .products .product-card:first-child,
   .products .product-card:nth-child(2) {
     flex: 2 46%;
@@ -848,6 +919,7 @@ a.bottom-text {
     flex: 1 46%;
   }
 }
+
 #sel {
   display: flex;
   flex-direction: column;
@@ -856,6 +928,7 @@ a.bottom-text {
   margin-left: 3em;
   padding-right: 1em;
 }
+
 #fil {
   display: flex;
   flex-direction: column;
@@ -863,6 +936,7 @@ a.bottom-text {
   margin-left: 5em;
   padding-right: 1em;
 }
+
 #fill {
   visibility: hidden;
 }

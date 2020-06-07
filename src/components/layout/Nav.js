@@ -1,13 +1,12 @@
 /* eslint-disable sort-imports */
 
-/* eslint-disable react/prop-types */
-/* eslint-disable no-ternary */
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';
 import initials from './Helper';
-import Cart from './ShoppingCart';
+import ShoppingCart from './ShoppingCart';
 import { logout } from '../../actions/auth';
+import SearchForm from './SearchForm';
 
 
 const loggedOut = (
@@ -19,7 +18,9 @@ const loggedOut = (
 
 const LoggedIn = (props) => (
   <div className="login">
-    <Link to={'/dashboard/user'}><span>{initials(`${props.users.first_name} ${props.users.first_name}` || props.users.business_name)}</span></Link>
+    <Link to={'/dashboard/user'}>
+      <span>{initials(props.users.email)}</span>
+    </Link>
     <button className="login-btn" onClick={props.handleClick}>Logout</button>
   </div>
 );
@@ -37,17 +38,11 @@ const NavListItem = (props) => (
 const NavList = () => (
   <ul className="navbar-nav mr-auto">
     <NavListItem to={'/home'} name="Home" />
-    <NavListItem to={'/products'} name="Products" />
     <NavListItem to={'/about'} name="About Us" />
     <NavListItem to={'/contact'} name="Contact Us" />
   </ul>
 );
 
-const SearchForm = () => (
-  <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search........" aria-label="Search" />
-  </form>
-);
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -66,7 +61,7 @@ const Nav = () => {
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <NavList />
       <SearchForm />
-      <Cart />
+      <NavLink to="/cart"><ShoppingCart /></NavLink>
       {isAuthenticated ? <LoggedIn users = {user} handleClick={handleClick} /> : loggedOut }
     </div>
     </div>

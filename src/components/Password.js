@@ -1,5 +1,7 @@
 /* eslint-disable sort-imports */
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import {
   faEnvelopeOpen, faLock
 } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +11,10 @@ import { SectionFarmer } from './Login';
 
 class Password extends Component {
   render() {
+    const isAuthenticated = useSelector(
+      (state) => state.auth.isAuthenticated
+    );
+    if (isAuthenticated) return <Redirect to="/home" />;
     return (
       <div className="main-bg ">
         <div className="sub-main">

@@ -18,25 +18,18 @@ import FarmerSignup from './Accounts/FarmerSignup';
 import CustomerSignup from './Accounts/CustomerSignup';
 import Nav from './layout/Nav';
 import Page404 from './layout/Page404';
-import Centerdash from './Centerdash';
+import AddProduct from './products/AddProduct';
+// import PrivateRoute from './layout/PrivateRoute';
+import ProductDetails from './products/ProductDetails';
+import CartItems from './orders/Cart';
+import Checkout from './orders/Checkout';
 
 const alertOptions = {
   position: 'top center',
-  timeout: 3000
+  timeout: 4000
 };
 
 class App extends Component {
-  state = {
-    filterText: ''
-  };
-
-  filterUpdate = (value) => {
-    // eslint-disable-next-line no-invalid-this
-    this.setState({
-      filterText: value
-    });
-  };
-
   componentDidMount() {
     store.dispatch(loadUser());
   }
@@ -51,18 +44,17 @@ class App extends Component {
                 <Nav />
                 <Alerts />
                 <Switch>
-                  <Route path="/" exact>
-                    <Hompage filterText={this.state.filterText} />
-                  </Route>
-                  <Route path="/home" exact>
-                    <Hompage filterText={this.state.filterText} />
-                  </Route>
+                  <Route path="/" exact component={Hompage} />
+                  <Route path="/home" exact component={Hompage} />
+                  <Route path="/products/:id" exact component={ProductDetails} />
                   <Route path="/login" exact component={Login} />
                   <Route path="/dashboard" exact component={Dashboard} />
                   <Route path="/signup/farmer" exact component={FarmerSignup} />
                   <Route path="/signup/customer" exact component={CustomerSignup} />
                   <Route path="/forgetpsw" exact component={Password} />
-                  <Route path="/center" component={Centerdash} />
+                  <Route path="/cart" exact component={CartItems} />
+                  <Route path="/checkout" exact component={Checkout} />
+                  <Route exact path="/product/add" component={AddProduct} />
                   <Route component={Page404} />
                 </Switch>
                 <Footer />

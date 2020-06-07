@@ -2,13 +2,12 @@
 /* eslint-disable react/prop-types */
 import './app.css';
 import React, { useState } from 'react';
-
 import {
   faEnvelope, faKey, faLock, faPenSquare, faUserCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/auth';
 
 
@@ -131,7 +130,12 @@ const SectionThree = () => (
 );
 
 
-export const Login = () => (
+export const Login = () => {
+  const isAuthenticated = useSelector(
+    (state) => state.auth.isAuthenticated
+  );
+  if (isAuthenticated) return <Redirect to="/home" />;
+  return (
     <div className="main-bg ">
         <div className="sub-main">
           {/* <!-- vertical tabs --> */}
@@ -146,4 +150,5 @@ export const Login = () => (
         </div>
         {/* <!-- copyright --> */}
       </div>
-);
+  );
+};

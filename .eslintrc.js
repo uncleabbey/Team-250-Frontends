@@ -30,6 +30,9 @@ module.exports = {
   rules: {
     'comma-dangle': ['error', 'never'],
     'no-param-reassign': ['error', { props: false }],
-    'class-methods-use-this': 0
+    'class-methods-use-this': 0,
+    'no-magic-numbers': 0,
+    'react/prop-types': 0,
+    'no-ternary': 0
   }
 };

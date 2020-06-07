@@ -14,7 +14,8 @@
     "test:watch": "jest --watch",
     "test:cover": "jest --coverage",
     "lint": "eslint \"src/**/*.js\"",
-    "start": "parcel ./src/components/index.html"
+    "start": "parcel ./src/components/index.html",
+    "build": "parcel ./src/components/index.html"
   },
   "author": "Build For SDG <buildforsdg@andela.com>",
   "homepage": "https://github.com/BuildForSDG/js-starter#readme",
