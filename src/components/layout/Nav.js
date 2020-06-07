@@ -1,7 +1,5 @@
 /* eslint-disable sort-imports */
 
-/* eslint-disable react/prop-types */
-/* eslint-disable no-ternary */
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';

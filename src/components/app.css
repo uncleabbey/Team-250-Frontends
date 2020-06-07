@@ -1,5 +1,5 @@
 .active-cyan .fa, .active-cyan-4 .fa {
-  color: #4dd0e1;
+    color: #4dd0e1;
 }
 .active-cyan-4 input[type=text]:focus:not([readonly]) {
     border-bottom: 1px solid #4dd0e1;
