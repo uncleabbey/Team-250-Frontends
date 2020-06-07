@@ -21,11 +21,11 @@ export const getProducts = (currentPage) => (dispatch, getState) => {
   const url = `https://zerohunger-backend.herokuapp.com/api/products?page=${currentPage}`;
   axios.get(url, tokenConfig(getState)).then((res) => {
     dispatch({
-      payload: res.data.products,
+      payload: res.data,
       type: GET_PRODUCTS
     });
   }).catch((error) => {
-    dispatch(returnErrors(error.response.data, error.response.status));
+    dispatch(returnErrors(error.response, error.response.status));
   });
 };
 
@@ -60,13 +60,12 @@ export const addProduct = (product) => (dispatch, getState) => {
       type: ADD_PRODUCT
     });
   }).catch((error) => {
-    dispatch(createMessage({ addBookError: 'Error Adding Book' }));
     dispatch(returnErrors(error.response.data, error.response.status));
   });
 };
 
 export const deleteProduct = (id) => (dispatch, getState) => {
-  const url = `https://zerohunger-backend.herokuapp.com/api/products/details/${id}`;
+  const url = `https://zerohunger-backend.herokuapp.com/api/products/${id}`;
   axios.delete(url, tokenConfig(getState)).then(() => {
     dispatch(createMessage({ deleteLead: 'Product Deleted' }));
     dispatch({

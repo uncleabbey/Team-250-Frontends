@@ -16,3 +16,5 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const LOGOUT_FAIL = 'LOGOUT_FAIL';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';

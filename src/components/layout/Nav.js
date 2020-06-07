@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';
 import initials from './Helper';
-import Cart from './ShoppingCart';
+import ShoppingCart from './ShoppingCart';
 import { logout } from '../../actions/auth';
 
 
@@ -39,7 +39,6 @@ const NavListItem = (props) => (
 const NavList = () => (
   <ul className="navbar-nav mr-auto">
     <NavListItem to={'/home'} name="Home" />
-    <NavListItem to={'/products'} name="Products" />
     <NavListItem to={'/about'} name="About Us" />
     <NavListItem to={'/contact'} name="Contact Us" />
   </ul>
@@ -68,7 +67,7 @@ const Nav = () => {
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <NavList />
       <SearchForm />
-      <Cart />
+      <NavLink to="/cart"><ShoppingCart /></NavLink>
       {isAuthenticated ? <LoggedIn users = {user} handleClick={handleClick} /> : loggedOut }
     </div>
     </div>

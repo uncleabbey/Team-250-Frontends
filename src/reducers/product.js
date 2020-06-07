@@ -12,7 +12,7 @@ import {
 
 const initialState = {
   count: 0,
-  loading: false,
+  loading: true,
   page: 1,
   pageSize: 20,
   product: {},
