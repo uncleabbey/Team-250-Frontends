@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { addProduct } from '../../actions/product';
 
 const Input = ({
@@ -90,11 +91,19 @@ const AddProduct = () => {
     formData.append('quantity', quantity);
     formData.append('product_img', productImg);
     dispatch(addProduct(formData));
+    setInputs({
+      description: '',
+      name: '',
+      price: 0,
+      productImg: '',
+      quantity: 0
+    });
   };
 
   return (
     <div className="form-container">
       <h2 className="text-center text-white mt-2">Add Product</h2>
+      <NavLink to="/dashboard"><button type="button" className="btn btn-primary">Back to Dashboard</button></NavLink>
       <form className="add-product-form" onSubmit={handleSubmit}>
         <Input type="text" onChange={handleChange} value={name} name="name" label="Name" />
         <Input type="number" onChange={handleChange} value={price} name="price" label="Price" />
