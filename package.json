@@ -2,10 +2,7 @@
   "name": "js-starter",
   "version": "0.0.1",
   "description": "A boilerplate for starting js code",
-  "keywords": [
-    "js-starter",
-    "boilerplate"
-  ],
+  "keywords": ["js-starter", "boilerplate"],
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,7 +35,7 @@
     "jquery": "^3.5.1",
     "mdbreact": "^4.27.0",
     "prop-type": "^0.0.1",
-    "react": "^16.13.1",
+    "react": "^16.2.0",
     "react-alert": "^7.0.1",
     "react-alert-template-basic": "^1.0.0",
     "react-dom": "^16.13.1",
@@ -48,7 +45,7 @@
     "react-router-dom": "^5.2.0",
     "react-transition-group": "^4.4.1",
     "reactstrap": "^8.4.1",
-    "redux": "^4.0.5",
+    "redux": "^3.1.0 || ^4.0.0",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "uuid": "^8.1.0",
@@ -66,7 +63,5 @@
     "jest": "^25.4.0",
     "parcel-bundler": "^1.12.4"
   },
-  "browserslist": [
-    "last 1 Chrome versions"
-  ]
+  "browserslist": ["last 1 Chrome versions"]
 }

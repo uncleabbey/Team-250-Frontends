@@ -1,5 +1,5 @@
 /* eslint-disable sort-imports */
-import './app.css';
+import './dash.css';
 import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -10,6 +10,7 @@ import Hompage from './Homepage';
 import { Login } from './Login';
 // import Navbar from './Navbar';
 import Password from './Password';
+import Dashboard from './Dashoard';
 import store from '../store';
 import Alerts from './layout/Alerts';
 import { loadUser } from '../actions/auth';
@@ -23,7 +24,6 @@ import ProductDetails from './products/ProductDetails';
 import CartItems from './orders/Cart';
 import Checkout from './orders/Checkout';
 import Thanks from './orders/Thanks';
-
 
 const alertOptions = {
   position: 'top center',
@@ -49,6 +49,7 @@ class App extends Component {
                   <Route path="/home" exact component={Hompage} />
                   <Route path="/products/:id" exact component={ProductDetails} />
                   <Route path="/login" exact component={Login} />
+                  <Route path="/dashboard" exact component={Dashboard} />
                   <Route path="/signup/farmer" exact component={FarmerSignup} />
                   <Route path="/signup/customer" exact component={CustomerSignup} />
                   <Route path="/forgetpsw" exact component={Password} />
