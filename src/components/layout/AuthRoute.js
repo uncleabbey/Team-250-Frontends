@@ -3,7 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const PrivateRoute = ({ component: Component, auth, ...rest }) => {
+const AuthRoute = ({ component: Component, auth, ...rest }) => {
   // eslint-disable-next-line no-param-reassign
   auth = useSelector((state) => state.auth);
   return (
@@ -11,11 +11,11 @@ const PrivateRoute = ({ component: Component, auth, ...rest }) => {
     {...rest}
     render={(props) => {
       if (auth.isLoading) return <h2>Loading...</h2>;
-      if (!auth.isFarmer) return <Redirect to="/login" />;
+      if (!auth.isAuthenticated) return <Redirect to="/login" />;
       return <Component {...props} />;
     }}
     />
   );
 };
 
-export default PrivateRoute;
+export default AuthRoute;

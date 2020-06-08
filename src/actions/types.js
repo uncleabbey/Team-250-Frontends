@@ -20,3 +20,4 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const SEARCH_PRODUCT = 'SEARCH_PRODUCT';
 export const ORDER_PRODUCT = 'ORDER_PRODUCT';
+export const USER_ORDERS = 'USER_ORDERS';

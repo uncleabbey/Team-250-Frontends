@@ -1,6 +1,12 @@
 import axios from 'axios';
 // eslint-disable-next-line sort-imports
-import { ADD_TO_CART, ORDER_PRODUCT, REMOVE_FROM_CART } from './types';
+import {
+  ADD_TO_CART,
+  LOADING,
+  ORDER_PRODUCT,
+  REMOVE_FROM_CART,
+  USER_ORDERS
+} from './types';
 import { createMessage, returnErrors } from './messages';
 import tokenConfig from './helper';
 
@@ -30,5 +36,21 @@ export const orderProduct = (data) => (dispatch, getState) => {
     });
   }).catch((error) => {
     dispatch(returnErrors(error.response.data, error.response.status));
+  });
+};
+
+
+export const getUserOrder = () => (dispatch, getState) => {
+  dispatch({
+    type: LOADING
+  });
+  const url = 'https://zerohunger-backend.herokuapp.com/api/orders/user';
+  axios.get(url, tokenConfig(getState)).then((res) => {
+    dispatch({
+      payload: res.data,
+      type: USER_ORDERS
+    });
+  }).catch((error) => {
+    dispatch(returnErrors(error.response, error.response.status));
   });
 };

@@ -2,22 +2,31 @@
 /* eslint-disable max-lines-per-function */
 import {
   ADD_TO_CART,
+  LOADING,
   LOGOUT_SUCCESS,
   ORDER_PRODUCT,
-  REMOVE_FROM_CART
+  REMOVE_FROM_CART,
+  USER_ORDERS
 } from '../actions/types';
 
 
 const initialState = {
   cart: JSON.parse(localStorage.getItem('cart')) || [],
   key: 'FLWPUBK_TEST-2432438e00d15b36d449ca3f1ef8b050-X',
+  loading: true,
   orderDetails: JSON.parse(localStorage.getItem('order')) || {},
-  seckey: 'FLWSECK_TEST-471857a280dfcd960f66aec3aa0e3d42-X'
+  seckey: 'FLWSECK_TEST-471857a280dfcd960f66aec3aa0e3d42-X',
+  userOrders: []
 };
 
 // eslint-disable-next-line default-param-last
 export default (state = initialState, action) => {
   switch (action.type) {
+    case LOADING:
+      return {
+        ...state,
+        loading: true
+      };
     case ADD_TO_CART: {
       const add = [...state.cart, action.payload];
       localStorage.setItem('cart', JSON.stringify(add));
@@ -50,6 +59,13 @@ export default (state = initialState, action) => {
         ...state,
         cart: [],
         orderDetails: order
+      };
+    }
+    case USER_ORDERS: {
+      return {
+        ...state,
+        loading: false,
+        userOrders: action.payload.orders
       };
     }
     default:

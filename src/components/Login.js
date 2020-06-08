@@ -134,6 +134,10 @@ export const Login = () => {
   const isAuthenticated = useSelector(
     (state) => state.auth.isAuthenticated
   );
+  const isFarmer = useSelector(
+    (state) => state.auth.isFarmer
+  );
+  if (isAuthenticated && isFarmer) return <Redirect to="/dashboard" />;
   if (isAuthenticated) return <Redirect to="/home" />;
   return (
     <div className="main-bg ">
