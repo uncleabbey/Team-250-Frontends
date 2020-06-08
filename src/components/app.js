@@ -22,6 +22,7 @@ import AddProduct from './products/AddProduct';
 import ProductDetails from './products/ProductDetails';
 import CartItems from './orders/Cart';
 import Checkout from './orders/Checkout';
+import Thanks from './orders/Thanks';
 
 
 const alertOptions = {
@@ -53,6 +54,7 @@ class App extends Component {
                   <Route path="/forgetpsw" exact component={Password} />
                   <Route path="/cart" exact component={CartItems} />
                   <Route path="/checkout" exact component={Checkout} />
+                  <Route path="/thanks" component={Thanks} />
                   <Route exact path="/product/add" component={AddProduct} />
                   <Route component={Page404} />
                 </Switch>

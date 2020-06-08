@@ -5,6 +5,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { removeCart } from '../../actions/order';
+import { total } from '../layout/Helper';
 
 const TableBody = ({ cart }) => cart.map((item, index) => {
   const dispactch = useDispatch();
@@ -12,29 +13,20 @@ const TableBody = ({ cart }) => cart.map((item, index) => {
   return (
   <tr key={index}>
     <td>{index + 1}</td>
-    <td>{item.product ? <p>{item.product.name}</p> : ''}</td>
-    <td>{item.product ? <p>₦{item.product.price}</p> : ''}</td>
+    <td>{item.produceId ? <p>{item.produceId.name}</p> : ''}</td>
+    <td>{item.produceId ? <p>₦{item.produceId.price}</p> : ''}</td>
     <td><p>{item.quantity}</p></td>
-    <td><p>{item.product ? item.product.price * item.quantity : ''}</p></td>
+    <td><p>{item.produceId ? item.produceId.price * item.quantity : ''}</p></td>
     <td><button onClick={() => handleClick(index)} className="btn btn-danger">X</button></td>
   </tr>
   );
 });
 
-const total = (arr) => {
-  if (arr.length === 0) {
-    return 0;
-  }
-  const sum = arr.reduce(
-    (acc, { product, quantity }) => acc + product.price * quantity, 0
-  );
-  return sum;
-};
 
 const CartItems = () => {
   const cart = useSelector((state) => state.order.cart);
   return (
-    <div className="container text-center">
+    <div className="container text-center cart-item">
       <h3>Cart Items</h3>
       {
       cart.length > 0 ? (

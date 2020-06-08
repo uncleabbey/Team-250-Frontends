@@ -3,7 +3,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';
-import initials from './Helper';
+import { initials } from './Helper';
 import ShoppingCart from './ShoppingCart';
 import { logout } from '../../actions/auth';
 import SearchForm from './SearchForm';
