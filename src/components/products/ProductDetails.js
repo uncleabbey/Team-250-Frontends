@@ -80,7 +80,7 @@ const ProductDetails = (props) => {
     dispatch(getProductById(id));
   }, []);
   const handleCart = () => {
-    const data = { product, quantity };
+    const data = { produceId: product, quantity };
     dispatch(addToCart(data));
   };
   return (

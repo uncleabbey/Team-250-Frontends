@@ -1,9 +1,10 @@
+/* eslint-disable multiline-ternary */
 /* eslint-disable sort-imports */
 
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';
-import initials from './Helper';
+import { initials } from './Helper';
 import ShoppingCart from './ShoppingCart';
 import { logout } from '../../actions/auth';
 import SearchForm from './SearchForm';
@@ -18,9 +19,13 @@ const loggedOut = (
 
 const LoggedIn = (props) => (
   <div className="login">
-    <Link to={'/dashboard/user'}>
+    {
+      props.isFarmer ? <Link to={'/dashboard'}>
+      <span>{initials(props.users.email)}</span>
+    </Link> : <Link to={'/order/user'}>
       <span>{initials(props.users.email)}</span>
     </Link>
+    }
     <button className="login-btn" onClick={props.handleClick}>Logout</button>
   </div>
 );
@@ -47,6 +52,7 @@ const NavList = () => (
 const Nav = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const isFarmer = useSelector((state) => state.auth.isFarmer);
   const user = useSelector((state) => state.auth.user);
   const handleClick = () => dispatch(logout());
   return (
@@ -62,7 +68,11 @@ const Nav = () => {
       <NavList />
       <SearchForm />
       <NavLink to="/cart"><ShoppingCart /></NavLink>
-      {isAuthenticated ? <LoggedIn users = {user} handleClick={handleClick} /> : loggedOut }
+      {isAuthenticated ? (
+      <LoggedIn
+        users = {user}
+        isFarmer={isFarmer}
+        handleClick={handleClick} />) : loggedOut }
     </div>
     </div>
   );

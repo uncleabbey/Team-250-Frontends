@@ -9,45 +9,45 @@ import {
 
 export default [
   {
-    href: '/profile',
     icon: faUserCircle,
     id: 1,
-    name: 'Profile',
-    Status: 'active'
+    name: 'Products',
+    Status: 'active',
+    to: '/products/farmer'
   },
   {
-    href: '/profile',
     icon: faSeedling,
     id: 2,
-    name: 'Get Fertilizers',
-    Status: 'Unactive'
+    name: 'Add Products',
+    Status: 'Unactive',
+    to: '/product/add'
   },
   {
-    href: '/profile',
     icon: faHandshake,
     id: 3,
-    name: 'Our Next Seminar',
-    Status: 'Unactive'
+    name: 'Orders',
+    Status: 'Unactive',
+    to: '/orders/farmer'
   },
   {
-    href: '/profile',
     icon: faPhone,
     id: 4,
-    name: 'Contact Us',
-    Status: 'Unactive'
+    name: 'Get Fertilizers',
+    Status: 'Unactive',
+    to: '/fertilizer'
   },
   {
-    href: '/profile',
     icon: faMoneyBill,
     id: 5,
-    name: 'Request for Loan',
-    Status: 'unactive'
+    name: 'Our next Seminar',
+    Status: 'unactive',
+    to: '/seminar'
   },
   {
-    href: '/profile',
     icon: faSignOutAlt,
     id: 6,
-    name: 'Log Out',
-    Status: 'Unactive'
+    name: 'Blog',
+    Status: 'Unactive',
+    to: '/blog'
   }
 ];

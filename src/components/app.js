@@ -19,10 +19,13 @@ import CustomerSignup from './Accounts/CustomerSignup';
 import Nav from './layout/Nav';
 import Page404 from './layout/Page404';
 import AddProduct from './products/AddProduct';
-// import PrivateRoute from './layout/PrivateRoute';
+import PrivateRoute from './layout/PrivateRoute';
 import ProductDetails from './products/ProductDetails';
 import CartItems from './orders/Cart';
 import Checkout from './orders/Checkout';
+import Thanks from './orders/Thanks';
+import AuthRoute from './layout/AuthRoute';
+import UserOrders from './orders/UserOrders';
 
 const alertOptions = {
   position: 'top center',
@@ -48,13 +51,15 @@ class App extends Component {
                   <Route path="/home" exact component={Hompage} />
                   <Route path="/products/:id" exact component={ProductDetails} />
                   <Route path="/login" exact component={Login} />
-                  <Route path="/dashboard" exact component={Dashboard} />
+                  <PrivateRoute path="/dashboard" exact component={Dashboard} />
                   <Route path="/signup/farmer" exact component={FarmerSignup} />
                   <Route path="/signup/customer" exact component={CustomerSignup} />
                   <Route path="/forgetpsw" exact component={Password} />
                   <Route path="/cart" exact component={CartItems} />
-                  <Route path="/checkout" exact component={Checkout} />
-                  <Route exact path="/product/add" component={AddProduct} />
+                  <AuthRoute path="/checkout" exact component={Checkout} />
+                  <AuthRoute path="/thanks" component={Thanks} />
+                  <AuthRoute path="/order/user" component={UserOrders} />
+                  <PrivateRoute exact path="/product/add" component={AddProduct} />
                   <Route component={Page404} />
                 </Switch>
                 <Footer />
