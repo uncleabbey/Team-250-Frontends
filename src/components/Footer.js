@@ -2,8 +2,9 @@ import './Footer.css';
 import React from 'react';
 
 const Footer = () => (
-  <div id="foot">
-    <div className="main-footer">
+  <span>
+    <div id="foot"></div>
+    <footer className="main-footer">
       <div className="copyright">
         <h2>
           &copy; 2020 SDG Andela. All rights reserved | Design by
@@ -12,8 +13,8 @@ const Footer = () => (
           </a>
         </h2>
       </div>
-    </div>
-  </div>
+    </footer>
+  </span>
 );
 
 export default Footer;
