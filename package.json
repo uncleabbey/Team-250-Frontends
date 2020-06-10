@@ -15,7 +15,7 @@
     "test:cover": "jest --coverage",
     "lint": "eslint \"src/**/*.js\"",
     "start": "parcel ./src/components/index.html",
-    "build": "parcel ./src/components/index.html"
+    "build": "parcel build ./src/components/index.js"
   },
   "author": "Build For SDG <buildforsdg@andela.com>",
   "homepage": "https://github.com/BuildForSDG/js-starter#readme",
@@ -63,5 +63,8 @@
     "jest": "^25.4.0",
     "parcel-bundler": "^1.12.4"
   },
-  "browserslist": ["last 1 Chrome versions"]
+  "browserslist": ["last 1 Chrome versions"],
+  "engines": {
+    "node": "12.16.1"
+  }
 }
