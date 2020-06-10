@@ -2,7 +2,10 @@
   "name": "js-starter",
   "version": "0.0.1",
   "description": "A boilerplate for starting js code",
-  "keywords": ["js-starter", "boilerplate"],
+  "keywords": [
+    "js-starter",
+    "boilerplate"
+  ],
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +18,7 @@
     "test:cover": "jest --coverage",
     "lint": "eslint \"src/**/*.js\"",
     "start": "parcel ./src/components/index.html",
-    "build": "parcel build ./src/components/index.js"
+    "build": "parcel build ./src/components/index.html"
   },
   "author": "Build For SDG <buildforsdg@andela.com>",
   "homepage": "https://github.com/BuildForSDG/js-starter#readme",
@@ -63,7 +66,9 @@
     "jest": "^25.4.0",
     "parcel-bundler": "^1.12.4"
   },
-  "browserslist": ["last 1 Chrome versions"],
+  "browserslist": [
+    "last 1 Chrome versions"
+  ],
   "engines": {
     "node": "12.16.1"
   }
