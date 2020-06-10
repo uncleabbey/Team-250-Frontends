@@ -18,7 +18,8 @@
     "test:cover": "jest --coverage",
     "lint": "eslint \"src/**/*.js\"",
     "start": "parcel ./src/components/index.html",
-    "build": "parcel build ./src/components/index.html"
+    "build": "parcel build ./src/components/index.html",
+    "now-build": "parcel build ./src/components/index.html --out-dir public"
   },
   "author": "Build For SDG <buildforsdg@andela.com>",
   "homepage": "https://github.com/BuildForSDG/js-starter#readme",

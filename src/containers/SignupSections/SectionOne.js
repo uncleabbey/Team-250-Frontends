@@ -37,6 +37,7 @@ export const Input = (props) => (
             name={props.name}
             required
             onChange = {props.onChange}
+            autoComplete="on"
           />
     </div>
 );

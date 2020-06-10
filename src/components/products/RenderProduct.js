@@ -4,15 +4,16 @@ import React from 'react';
 
 const RenderProduct = ({ products }) => (
   <div className="product-card">
+
+  <Link to={`/products/${products.id}`}>
     <div className="product-image">
       <img src={products.product_img} />
     </div>
     <div className="product-info">
-      <Link to={`/products/${products.id}`}>
         <h5 id="h5">{products.name}</h5>
-      </Link>
       <h6> ₦{products.price} </h6>
     </div>
+  </Link>
   </div>
 );
 
