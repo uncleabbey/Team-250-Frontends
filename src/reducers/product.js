@@ -12,6 +12,7 @@ import {
 
 
 const initialState = {
+  addedProduct: [],
   count: 0,
   loading: true,
   page: 1,
@@ -57,6 +58,7 @@ export default (state = initialState, action) => {
     case EDIT_PRODUCT:
       return {
         ...state,
+        addedProduct: [...state.addedProduct, action.payload],
         products: [...state.products, action.payload]
       };
     case DELETE_PRODUCT:
