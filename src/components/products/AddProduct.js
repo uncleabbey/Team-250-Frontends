@@ -16,6 +16,7 @@ const Input = ({
     name={name}
     value={value}
     onChange={onChange}
+    autoComplete="on"
     />
   </div>
 );
@@ -27,6 +28,7 @@ const TextArea = ({ onChange, value }) => (
     value={value}
     name="description"
     onChange={onChange}
+    autoComplete="on"
     className="form-control form__input form-text-area"></textarea>
   </div>
 );
@@ -44,6 +46,8 @@ const Image = ({ onChange }) => (
 );
 
 const Products = ({ products }) => (
+  <>
+  <h3 className="text-white">List of Product Added</h3>
   <ul className="list-group">
     {
       products.map((item) => (
@@ -53,6 +57,7 @@ const Products = ({ products }) => (
       ))
     }
   </ul>
+  </>
 );
 
 const Submit = () => (
@@ -62,7 +67,7 @@ const Submit = () => (
 );
 
 const AddProduct = () => {
-  const products = useSelector((state) => state.product.products);
+  const addedProduct = useSelector((state) => state.product.addedProduct);
   const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
     description: '',
@@ -106,13 +111,13 @@ const AddProduct = () => {
       <NavLink to="/dashboard"><button type="button" className="btn btn-primary">Back to Dashboard</button></NavLink>
       <form className="add-product-form" onSubmit={handleSubmit}>
         <Input type="text" onChange={handleChange} value={name} name="name" label="Name" />
-        <Input type="number" onChange={handleChange} value={price} name="price" label="Price" />
+        <Input type="number" onChange={handleChange} value={price} name="price" label="Price (₦)" />
         <Input type="number" onChange={handleChange} value={quantity} name="quantity" label="Quantity" />
         <Image onChange={handleImage} />
         <TextArea onChange={handleChange} value={description} />
         <Submit />
       </form>
-      <Products products={products} />
+      <Products products={addedProduct} />
     </div>
   );
 };

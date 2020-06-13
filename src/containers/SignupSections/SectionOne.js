@@ -28,7 +28,14 @@ export const Input = (props) => (
     <span className="fa fa-user-o" aria-hidden="true">
       <FontAwesomeIcon icon={props.icon} />
     </span>
-    <input type={props.type} placeholder={props.placeholder} name={props.name} required onChange={props.onChange} />
+    <input
+      type={props.type}
+      placeholder={props.placeholder}
+      name={props.name}
+      required
+      onChange={props.onChange}
+      autoComplete="on"
+    />
   </div>
 );
 export const SelectState = (props) => (

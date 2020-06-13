@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: true,
-        isFarmer: action.payload.isFarmer,
+        isFarmer: action.payload.is_farmer,
         isLoading: false,
         user: action.payload
       };
@@ -42,7 +42,7 @@ export default (state = initialState, action) => {
         ...state,
         ...action.payload,
         isAuthenticated: true,
-        isFarmer: action.payload.user.isFarmer,
+        isFarmer: action.payload.user.is_farmer,
         isLoading: false
       };
     case AUTH_ERROR:

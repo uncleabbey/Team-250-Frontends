@@ -3,7 +3,7 @@ const extract1stL = (string) => {
     return '';
   }
 
-  return string[0] + string[1];
+  return string[0];
 };
 
 export const initials = (string) => {

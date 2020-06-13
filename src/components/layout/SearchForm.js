@@ -18,7 +18,7 @@ const SearchForm = () => {
 
 
   return (
-    <form onSubmit={(event) => event.preventDefault()} className="form-inline active-cyan-4 my-2 my-lg-0">
+    <form onSubmit={(event) => event.preventDefault()} className="form-inline active-cyan-4 my-2 my-lg-0 search-form">
       <i className="fas fa-search" aria-hidden="true"></i>
       <input
       className="form-control
@@ -27,6 +27,7 @@ const SearchForm = () => {
       aria-label="Search"
       value={inputs}
       onChange={handleChange}
+      autoComplete="on"
       />
     </form>
   );
