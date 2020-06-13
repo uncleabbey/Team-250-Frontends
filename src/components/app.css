@@ -1,8 +1,9 @@
 .cart-item {
   height: calc(100vh - 146px);
 }
-.active-cyan .fa, .active-cyan-4 .fa {
-    color: #4dd0e1;
+.active-cyan .fa,
+.active-cyan-4 .fa {
+  color: #4dd0e1;
 }
 .active-cyan-4 input[type='text']:focus:not([readonly]) {
   border-bottom: 1px solid #4dd0e1;
@@ -31,7 +32,7 @@
     margin: 0 auto;
     background-color: #00ad45;
     padding: 1em;
-}
+  }
   .add-product-form {
     width: 90%;
   }
@@ -41,30 +42,30 @@
     width: 100%;
     margin: 0 auto;
     padding: 1em;
-}
+  }
   .add-product-form {
     background: #fff;
     width: 80%;
   }
   .form-group {
-  margin: 10px auto;
-  width: 60%;
-}
+    margin: 10px auto;
+    width: 60%;
+  }
 }
 @media screen and (max-width: 1024px) and (min-width: 801px) {
   .form-container {
     width: 100%;
     margin: 0 auto;
     padding: 1em;
-}
+  }
   .add-product-form {
     background: #fff;
     width: 60%;
   }
   .form-group {
-  margin: 10px auto;
-  width: 60%;
-}
+    margin: 10px auto;
+    width: 60%;
+  }
 }
 
 .form-group {
@@ -158,7 +159,8 @@
   margin-right: 10px;
 }
 @media screen and (max-width: 800px) {
-  .login, .logout {
+  .login,
+  .logout {
     display: flex;
     flex-direction: column;
   }
@@ -388,6 +390,7 @@ body {
   -o-background-size: cover;
   -ms-background-size: cover;
   min-height: 100vh;
+  padding-bottom: 5em;
 }
 
 /* title */
@@ -407,6 +410,7 @@ h1 {
 .sub-main {
   margin: 0 auto;
   max-width: 1067px;
+  padding-bottom: 3em;
 }
 
 .image-style {
@@ -497,7 +501,6 @@ label.icon-left span {
 
 .sub-main form {
   background: #ffff;
-  padding: 2em;
 }
 
 .legend {
@@ -557,7 +560,7 @@ p.para-style-2 a {
 }
 
 .submit {
-  margin: 2.3em auto 0;
+  margin: 0.2em auto 0;
   background: #00ad45;
   border: none;
   cursor: pointer;
@@ -716,7 +719,7 @@ a.bottom-text {
     min-height: 220px;
   }
   .sub-main form {
-    padding: 1.5em;
+    padding: 0;
   }
   .submit {
     font-size: 14px;
@@ -946,8 +949,8 @@ a.bottom-text {
 }
 
 .product-image img {
-    width: 350px;
-    height: 200px;
+  width: 350px;
+  height: 200px;
 }
 
 .product-info {
@@ -959,20 +962,18 @@ a.bottom-text {
 @media only screen and (max-width: 600px) {
   .products {
     display: block;
-}
-.product-card {
+  }
+  .product-card {
     max-width: 70%;
     margin: 0 auto;
-}
-
+  }
 }
 @media screen and (max-width: 800px) and (min-width: 601px) {
-.product-card {
+  .product-card {
     max-width: 28%;
     margin: 0 auto;
+  }
 }
-}
-
 
 #sel {
   display: flex;
@@ -993,4 +994,7 @@ a.bottom-text {
 
 #fill {
   visibility: hidden;
+}
+.for {
+  padding: 5em;
 }
