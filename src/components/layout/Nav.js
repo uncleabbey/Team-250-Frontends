@@ -1,3 +1,6 @@
+/* eslint-disable prefer-template */
+/* eslint-disable quotes */
+/* eslint-disable no-negated-condition */
 /* eslint-disable multiline-ternary */
 /* eslint-disable sort-imports */
 
@@ -21,7 +24,9 @@ const LoggedIn = (props) => (
   <div className="login">
     {
       props.isFarmer ? <Link to={'/dashboard'}>
-      <span>{initials(props.users.email)}</span>
+      <span>
+        {initials(!props.users.first_name ? props.users.business_name : props.users.first_name + " " + props.users.last_name)}
+      </span>
     </Link> : <Link to={'/order/user'}>
       <span>{initials(props.users.email)}</span>
     </Link>

@@ -2,9 +2,11 @@ import axios from 'axios';
 // eslint-disable-next-line sort-imports
 import {
   ADD_TO_CART,
+  DAILY_SALES,
   LOADING,
   ORDER_PRODUCT,
   REMOVE_FROM_CART,
+  SALES_REPORT,
   USER_ORDERS
 } from './types';
 import { createMessage, returnErrors } from './messages';
@@ -49,6 +51,36 @@ export const getUserOrder = () => (dispatch, getState) => {
     dispatch({
       payload: res.data,
       type: USER_ORDERS
+    });
+  }).catch((error) => {
+    dispatch(returnErrors(error.response, error.response.status));
+  });
+};
+
+export const getDailySales = () => (dispatch, getState) => {
+  dispatch({
+    type: LOADING
+  });
+  const url = 'https://zerohunger-backend.herokuapp.com/api/sales/daily';
+  axios.get(url, tokenConfig(getState)).then((res) => {
+    dispatch({
+      payload: res.data,
+      type: DAILY_SALES
+    });
+  }).catch((error) => {
+    dispatch(returnErrors(error.response, error.response.status));
+  });
+};
+
+export const getSalesReport = (days) => (dispatch, getState) => {
+  dispatch({
+    type: LOADING
+  });
+  const url = `https://zerohunger-backend.herokuapp.com/api/sales/${days}`;
+  axios.get(url, tokenConfig(getState)).then((res) => {
+    dispatch({
+      payload: res.data,
+      type: SALES_REPORT
     });
   }).catch((error) => {
     dispatch(returnErrors(error.response, error.response.status));
