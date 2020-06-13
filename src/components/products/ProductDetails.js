@@ -29,23 +29,13 @@ const Details = ({
   name, description, price, quantity, setQuantity, onClick
 }) => (
   <div className="details col-md-6">
-    <h3 className="product-title">{name}</h3>
-    <div className="rating">
-      <div className="stars">
-        <span className="fa fa-star checked"></span>
-        <span className="fa fa-star checked"></span>
-        <span className="fa fa-star checked"></span>
-        <span className="fa fa-star"></span>
-        <span className="fa fa-star"></span>
-      </div>
-      <span className="review-no">41 reviews</span>
-    </div>
+    <h4 className="product-title">{name}</h4>
+    <h6 className="price">
+      current price: <span>₦{price}</span>
+    </h6>
     <p className="product-description">
       { description }
     </p>
-    <h4 className="price">
-      current price: <span>₦{price}</span>
-    </h4>
     <p className="vote">
       <strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong>
     </p>

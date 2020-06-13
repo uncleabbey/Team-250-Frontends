@@ -51,3 +51,29 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+
+
+{ /* <div className="row">
+          <div className="col-md-5 col-sm-5 col-xs-12 gutter m-auto">
+            <div className="sales">
+              <h2>Your Sale is { dailySales }</h2>
+              <div className="btn-group">
+                <button
+                  className="btn btn-secondary btn-lg dropdown-toggle"
+                  type="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span>Period:</span> Last Week
+                </button>
+                <div className="dropdown-menu">
+                  <a href="#">Last Month</a>
+                  <a href="#">6 Months ago</a>
+                  <a href="#">This Year</a>
+                  <a href="#">All sales</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */ }

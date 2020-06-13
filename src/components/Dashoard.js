@@ -6,6 +6,7 @@ import React from 'react';
 // eslint-disable-next-line sort-imports
 import Centerdash from './Centerdash';
 import DashItem from './DashboardNav';
+// import ItemOrdered from './sales/DailySales';
 
 
 const Dashoard = () => (

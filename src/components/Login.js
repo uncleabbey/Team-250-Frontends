@@ -33,6 +33,7 @@ const Input = (props) => (
         name={props.name}
         onChange={props.onChange}
         required
+        autoComplete="on"
         />
       </div>
 );

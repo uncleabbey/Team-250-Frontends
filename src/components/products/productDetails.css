@@ -171,3 +171,11 @@
   width: 30%;
   text-align: center;
 }
+@media only screen and (max-width: 600px) {
+
+.quantity {
+  width: 80%;
+  text-align: center;
+}
+
+}

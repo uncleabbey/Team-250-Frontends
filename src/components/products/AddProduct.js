@@ -16,6 +16,7 @@ const Input = ({
     name={name}
     value={value}
     onChange={onChange}
+    autoComplete="on"
     />
   </div>
 );
@@ -27,6 +28,7 @@ const TextArea = ({ onChange, value }) => (
     value={value}
     name="description"
     onChange={onChange}
+    autoComplete="on"
     className="form-control form__input form-text-area"></textarea>
   </div>
 );
