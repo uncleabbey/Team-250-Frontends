@@ -46,7 +46,7 @@ export default [
   {
     icon: faSignOutAlt,
     id: 6,
-    name: 'Blog',
+    name: 'Request for loan',
     Status: 'Unactive',
     to: '/blog'
   }
