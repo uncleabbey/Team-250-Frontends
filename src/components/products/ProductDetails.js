@@ -43,11 +43,11 @@ const Details = ({
       <h5>Quantity</h5>
       <div className="quantity">
         <p>{quantity}</p>
-    <button type="button" onClick={() => setQuantity(quantity - 1)} className="btn-danger mr-2" >
+    <button type="button" onClick={() => setQuantity(quantity - 1)} className="btn-danger mr-2 quantity-btn" >
           -
     </button>
         Quantity
-    <button type="button" onClick={() => setQuantity(quantity + 1)} className="btn-danger">
+    <button type="button" onClick={() => setQuantity(quantity + 1)} className="btn-danger quantity-btn">
         +
     </button>
     </div>
