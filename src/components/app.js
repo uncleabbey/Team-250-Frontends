@@ -27,6 +27,7 @@ import Thanks from './orders/Thanks';
 import AuthRoute from './layout/AuthRoute';
 import UserOrders from './orders/UserOrders';
 import Contacts from './Contact';
+import Aboutus from './Aboutus';
 
 const alertOptions = {
   position: 'top center',
@@ -58,6 +59,7 @@ class App extends Component {
                   <Route path="/forgetpsw" exact component={Password} />
                   <Route path="/contactus" exact component={Contacts} />
                   <Route path="/cart" exact component={CartItems} />
+                  <Route path="/aboutus" exact component={Aboutus} />
                   <AuthRoute path="/checkout" exact component={Checkout} />
                   <AuthRoute path="/thanks" component={Thanks} />
                   <AuthRoute path="/order/user" component={UserOrders} />
