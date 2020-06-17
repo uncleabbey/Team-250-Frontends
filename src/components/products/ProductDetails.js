@@ -43,11 +43,11 @@ const Details = ({
       <h5>Quantity</h5>
       <div className="quantity">
         <p>{quantity}</p>
-    <button type="button" onClick={() => setQuantity(quantity - 1)} className="btn-danger mr-2" >
+    <button type="button" onClick={() => setQuantity(quantity - 1)} className="btn-danger mr-2 quantity-btn" >
           -
     </button>
         Quantity
-    <button type="button" onClick={() => setQuantity(quantity + 1)} className="btn-danger">
+    <button type="button" onClick={() => setQuantity(quantity + 1)} className="btn-danger quantity-btn">
         +
     </button>
     </div>
@@ -88,12 +88,12 @@ const ProductDetails = (props) => {
               <Images src={product.product_img} name={product.name} />
               </div>
               <Details
-              quantity={quantity}
-              setQuantity={setQuantity}
-              name={product.name}
-              description={product.description}
-              price={product.price}
-              onClick={handleCart}
+                quantity={quantity}
+                setQuantity={setQuantity}
+                name={product.name}
+                description={product.description}
+                price={product.price}
+                onClick={handleCart}
               />
             </div>
           </div>

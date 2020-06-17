@@ -16,7 +16,7 @@ const initialState = {
   count: 0,
   loading: true,
   page: 1,
-  pageSize: 20,
+  pageSize: 18,
   product: {},
   products: []
 };

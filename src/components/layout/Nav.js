@@ -95,7 +95,8 @@ const Nav = () => {
         <NavLink to="/cart">
           <ShoppingCart />
         </NavLink>
-        {isAuthenticated ? <LoggedIn users={user} isFarmer={isFarmer} handleClick={handleClick} /> : loggedOut}
+        {isAuthenticated ? <LoggedIn
+          users={user} isFarmer={isFarmer} handleClick={handleClick} /> : loggedOut}
       </div>
     </div>
   );

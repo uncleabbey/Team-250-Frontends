@@ -7,17 +7,24 @@ import { getDailySales, getSalesReport } from '../actions/order';
 import ItemOrdered from './sales/DailySales';
 import Loader from './layout/Loader';
 
+const Select = (props) => (
+  <div className="form-group">
+    <select onChange={props.handleChange} value={props.value} className="form-control">
+      <option value={0}>Today</option>
+      <option value={7} >Last 7 Days</option>
+      <option value={30}>Last 30 Days</option>
+      <option value={365}>This Year</option>
+    </select>
+  </div>
+);
 const Centerdash = () => {
   const sales = useSelector((state) => state.order.sales);
   const loading = useSelector((state) => state.order.loading);
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
-  const [state] = useState({
-    month: 30,
-    week: 7,
-    year: 365
-  });
-  const handleClick = (days) => {
+  const [days, setDays] = useState(0);
+  const handleChange = (event) => {
+    setDays(event.target.value);
     dispatch(getSalesReport(days));
   };
   useEffect(() => {
@@ -29,28 +36,7 @@ const Centerdash = () => {
         <h2 className="text-center">Hello, {user.business_name} </h2>
         <div className="col-sm-4 text-center m-auto">
           <div className="">
-            <div className="dropdown">
-          <button
-            className="btn btn-success dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false">
-          Today
-          </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <button type="button" className="dropdown-item" onClick={() => handleClick(state.week)}>
-                Last 7 Days
-              </button>
-              <button type="button" className="dropdown-item" onClick={() => handleClick(state.month)}>
-                Last 30 Days
-              </button>
-              <button type="button" className="dropdown-item" onClick={() => handleClick(state.year)}>
-                Last year
-              </button>
-            </div>
-          </div>
+            <Select handleChange={handleChange} />
           </div>
           <header className="m-auto">
           <h5>Your Sale is ₦{ sales }</h5>
