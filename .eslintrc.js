@@ -5,17 +5,34 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: ['airbnb-base'],
+  plugins: ['react'],
+  extends: ['airbnb-base', 'eslint:all', 'plugin:react/recommended'],
+  parser: 'babel-eslint',
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
   },
+  settings: {
+    react: {
+      createClass: 'createReactClass',
+      pragma: 'React',
+      version: 'detect',
+      flowVersion: '0.53'
+    }
+  },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   rules: {
     'comma-dangle': ['error', 'never'],
-    'no-param-reassign': ['error', { props: false }]
+    'no-param-reassign': ['error', { props: false }],
+    'class-methods-use-this': 0,
+    'no-magic-numbers': 0,
+    'react/prop-types': 0,
+    'no-ternary': 0
   }
 };
