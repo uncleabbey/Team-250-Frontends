@@ -17,25 +17,49 @@
     "test:watch": "jest --watch",
     "test:cover": "jest --coverage",
     "lint": "eslint \"src/**/*.js\"",
-    "start": "parcel ./src/index.html"
+    "start": "parcel ./src/components/index.html",
+    "build": "parcel build ./src/components/index.html",
+    "now-build": "parcel build ./src/components/index.html --out-dir public"
   },
-  "author": {
-    "name": "Build For SDG",
-    "email": "buildforsdg@andela.com"
-  },
+  "author": "Build For SDG <buildforsdg@andela.com>",
   "homepage": "https://github.com/BuildForSDG/js-starter#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BuildForSDG/js-starter.git"
-  },
+  "repository": "https://github.com/BuildForSDG/js-starter.git",
   "bugs": {
     "url": "https://github.com/BuildForSDG/js-starter/issues"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "axios": "^0.19.2",
+    "babel-eslint": "^10.1.0",
+    "bootstrap": "^4.5.0",
+    "eslint-plugin-react": "^7.20.0",
+    "jquery": "^3.5.1",
+    "mdbreact": "^4.27.0",
+    "prop-type": "^0.0.1",
+    "react": "^16.2.0",
+    "react-alert": "^7.0.1",
+    "react-alert-template-basic": "^1.0.0",
+    "react-dom": "^16.13.1",
+    "react-flutterwave-rave": "^1.0.4",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-transition-group": "^4.4.1",
+    "reactstrap": "^8.4.1",
+    "redux": "^3.1.0 || ^4.0.0",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^8.1.0",
+    "validator": "^13.0.0"
+  },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.10.1",
     "babel-jest": "^25.4.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
