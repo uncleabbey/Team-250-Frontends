@@ -23,3 +23,4 @@ export const ORDER_PRODUCT = 'ORDER_PRODUCT';
 export const USER_ORDERS = 'USER_ORDERS';
 export const DAILY_SALES = 'DAILY_SALES';
 export const SALES_REPORT = 'SALES_REPORT';
+export const CONTACT_US = 'CONTACT_US'

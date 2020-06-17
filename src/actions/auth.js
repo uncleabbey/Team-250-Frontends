@@ -2,6 +2,7 @@ import axios from 'axios';
 // eslint-disable-next-line sort-imports
 import {
   AUTH_ERROR,
+  CONTACT_US,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
@@ -10,7 +11,7 @@ import {
   USER_LOADED,
   USER_LOADING
 } from './types';
-import { returnErrors } from './messages';
+import { createMessage, returnErrors } from './messages';
 import tokenConfig from './helper';
 
 
@@ -140,5 +141,27 @@ export const loadUser = () => (dispatch, getState) => {
       dispatch({
         type: AUTH_ERROR
       });
+    });
+};
+
+export const contact = (data) => (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+  // Request Body
+  const body = JSON.stringify(data);
+  axios
+    .post('https://zerohunger-backend.herokuapp.com/api/contact', body, config)
+    .then((res) => {
+      dispatch(createMessage({ contactUs: 'Success' }));
+      dispatch({
+        payload: res.data,
+        type: CONTACT_US
+      });
+    })
+    .catch((error) => {
+      dispatch(returnErrors(error.response.data, error.response.status));
     });
 };
