@@ -88,12 +88,12 @@ const ProductDetails = (props) => {
               <Images src={product.product_img} name={product.name} />
               </div>
               <Details
-              quantity={quantity}
-              setQuantity={setQuantity}
-              name={product.name}
-              description={product.description}
-              price={product.price}
-              onClick={handleCart}
+                quantity={quantity}
+                setQuantity={setQuantity}
+                name={product.name}
+                description={product.description}
+                price={product.price}
+                onClick={handleCart}
               />
             </div>
           </div>

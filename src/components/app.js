@@ -27,6 +27,7 @@ import Thanks from './orders/Thanks';
 import AuthRoute from './layout/AuthRoute';
 import UserOrders from './orders/UserOrders';
 import Contacts from './Contact';
+import About from './about/About';
 
 const alertOptions = {
   position: 'top center',
@@ -57,6 +58,7 @@ class App extends Component {
                   <Route path="/signup/customer" exact component={CustomerSignup} />
                   <Route path="/forgetpsw" exact component={Password} />
                   <Route path="/contactus" exact component={Contacts} />
+                  <Route path="/about" exact component={About} />
                   <Route path="/cart" exact component={CartItems} />
                   <AuthRoute path="/checkout" exact component={Checkout} />
                   <AuthRoute path="/thanks" component={Thanks} />
