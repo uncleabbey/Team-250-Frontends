@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 // eslint-disable-next-line sort-imports
-import Centerdash from './Centerdash';
+import Centerdash from '../Centerdash';
 import DashItem from './DashboardNav';
 // import ItemOrdered from './sales/DailySales';
 

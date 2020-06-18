@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../actions/auth';
+import { login } from '../../actions/auth';
 
 
 const FormHead = () => (

@@ -6,7 +6,7 @@ import {
   faEnvelopeOpen, faLock
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SectionCustomer, SectionOne } from '../containers/SignupSections/SectionOne';
+import { SectionCustomer, SectionOne } from '../../containers/SignupSections/SectionOne';
 import { SectionFarmer } from './Login';
 
 class Password extends Component {
