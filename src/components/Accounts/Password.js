@@ -1,21 +1,32 @@
+/* eslint-disable max-lines-per-function */
 /* eslint-disable sort-imports */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  faEnvelopeOpen, faLock
+  faLock
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SectionCustomer, SectionOne } from '../../containers/SignupSections/SectionOne';
+import { SectionCustomer, SectionOne } from './SectionOne';
 import { SectionFarmer } from './Login';
+import { resetPassword } from '../../actions/auth';
 
-class Password extends Component {
-  render() {
-    const isAuthenticated = useSelector(
-      (state) => state.auth.isAuthenticated
-    );
-    if (isAuthenticated) return <Redirect to="/home" />;
-    return (
+const Password = () => {
+  const [email, setEmail] = useState('');
+  const dispatch = useDispatch();
+  const isAuthenticated = useSelector(
+    (state) => state.auth.isAuthenticated
+  );
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = { email };
+    // eslint-disable-next-line no-console
+    console.log(data);
+    dispatch(resetPassword(data));
+    // props.history.push('/checkmail');
+  };
+  if (isAuthenticated) return <Redirect to="/home" />;
+  return (
       <div className="main-bg ">
         <div className="sub-main">
           <div className="vertical-tab">
@@ -31,31 +42,37 @@ class Password extends Component {
                 Forgot Password?
               </label>
               <article>
-                <form action="#" method="post">
+                <form onSubmit={handleSubmit} className="p-3">
                   <h3 className="legend last">Reset Password</h3>
+                  <div className="p-2">
                   <p className="para-style">
                     Enter your email address below and we will send you an email with instructions.
                   </p>
                   <p className="para-style-2">
                     <strong>Need Help?</strong> Learn more about how to <a href="#">retrieve an existing account.</a>
                   </p>
-                  <div className="input">
-                    <span className="fa fa-envelope-o" aria-hidden="true">
-                      <FontAwesomeIcon icon={faEnvelopeOpen} />
-                    </span>
-                    <input type="email" placeholder="Email" name="email" required />
                   </div>
-                  <button type="submit" className="bt submit last-btn">
-                    Reset
-                  </button>
+                  <div className="form-group">
+                    <input
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    required
+                    value={email}
+                    onChange = {(event) => setEmail(event.target.value)}
+                    className="form-control"/>
+                  </div>
+                  <div className="form-group">
+                    <button type="submit" className="bt submit last-btn">
+                      Reset
+                    </button>
+                  </div>
                 </form>
               </article>
             </div>
           </div>
         </div>
       </div>
-    );
-  }
-}
-
+  );
+};
 export default Password;

@@ -2,10 +2,10 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { SectionCustomer } from '../Login';
+import { SectionCustomer } from './Login';
 import {
   SectionOne, SectionThree, SectionTwo
-} from '../../containers/SignupSections/SectionOne';
+} from './SectionOne';
 
 const FarmerSignup = () => {
   const isAuthenticated = useSelector(

@@ -1,12 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './dash.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 // eslint-disable-next-line sort-imports
-import Centerdash from '../Centerdash';
+import Centerdash from './Centerdash';
 import DashItem from './DashboardNav';
-// import ItemOrdered from './sales/DailySales';
 
 
 const Dashoard = () => (

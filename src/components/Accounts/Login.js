@@ -1,6 +1,5 @@
 /* eslint-disable sort-imports */
 /* eslint-disable react/prop-types */
-import './app.css';
 import React, { useState } from 'react';
 import {
   faEnvelope, faKey, faLock, faPenSquare, faUserCircle

@@ -13,8 +13,8 @@ import { createMessage } from '../../actions/messages';
 import {
   // eslint-disable-next-line import/named
   FormHead, Input, SelectState, SectionOne, SectionThree
-} from '../../containers/SignupSections/SectionOne';
-import { SectionFarmer } from '../Login';
+} from './SectionOne';
+import { SectionFarmer } from './Login';
 
 const RegisterCustomer = () => {
   const [inputs, setInputs] = useState({
