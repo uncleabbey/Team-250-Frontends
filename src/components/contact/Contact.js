@@ -3,8 +3,9 @@ import './contact.css';
 import React, { useState } from 'react';
 import { faEnvelopeOpen, faLocationArrow, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { contact } from '../actions/auth';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+// eslint-disable-next-line sort-imports
+import { contact } from '../../actions/auth';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -22,12 +23,11 @@ const Contacts = () => {
     email, firstName, lastName, message, phone
   } = inputs;
   const handleSubmit = (event) => {
-
     event.preventDefault();
     const data = {
       email, first_name: firstName, last_name: lastName, message, phone
     };
-    dispatch(contact(data))
+    dispatch(contact(data));
     // eslint-disable-next-line no-console
     console.log(data);
     setInputs({

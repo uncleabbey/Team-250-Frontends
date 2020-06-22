@@ -31,6 +31,7 @@ class Alerts extends Component {
       if (message.addCart) alert.success(message.addCart);
       if (message.removeCart) alert.success(message.removeCart);
       if (message.contactUs) alert.success(message.contactUs);
+      if (message.resetPassword) alert.success(message.resetPassword);
     }
   }
 

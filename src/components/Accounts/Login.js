@@ -1,6 +1,5 @@
 /* eslint-disable sort-imports */
 /* eslint-disable react/prop-types */
-import './app.css';
 import React, { useState } from 'react';
 import {
   faEnvelope, faKey, faLock, faPenSquare, faUserCircle
@@ -8,7 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../actions/auth';
+import { login } from '../../actions/auth';
 
 
 const FormHead = () => (

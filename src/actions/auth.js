@@ -2,12 +2,14 @@ import axios from 'axios';
 // eslint-disable-next-line sort-imports
 import {
   AUTH_ERROR,
+  CHANGE_PASSWORD,
   CONTACT_US,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
   REGISTER_FAIL,
   REGISTER_SUCCESS,
+  RESET_PASSWORD,
   USER_LOADED,
   USER_LOADING
 } from './types';
@@ -159,6 +161,50 @@ export const contact = (data) => (dispatch) => {
       dispatch({
         payload: res.data,
         type: CONTACT_US
+      });
+    })
+    .catch((error) => {
+      dispatch(returnErrors(error.response.data, error.response.status));
+    });
+};
+
+export const resetPassword = (data) => (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+  // Request Body
+  const body = JSON.stringify(data);
+  axios
+    .post('https://zerohunger-backend.herokuapp.com/api/auth/password/reset', body, config)
+    .then((res) => {
+      dispatch(createMessage({ resetPassword: 'Success check your mail for instruction' }));
+      dispatch({
+        payload: res.data,
+        type: RESET_PASSWORD
+      });
+    })
+    .catch((error) => {
+      dispatch(returnErrors(error.response.data, error.response.status));
+    });
+};
+
+export const changePassword = ({ password, token }) => (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+  // Request Body
+  const data = { password };
+  const body = JSON.stringify(data);
+  axios
+    .put(`https://zerohunger-backend.herokuapp.com/api/auth/password/change/${token}`, body, config)
+    .then((res) => {
+      dispatch({
+        payload: res.data,
+        type: CHANGE_PASSWORD
       });
     })
     .catch((error) => {

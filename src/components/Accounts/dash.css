@@ -1,6 +1,7 @@
 /*Main CSS*/
 
 /*Login Signup Page*/
+
 a:focus,
 a:hover,
 a {
@@ -673,7 +674,6 @@ r .modal-header .close {
     padding-top: 5px;
   }
   .user-dashboard .header-rightside {
-    display: inline-block;
     float: left;
     width: 100%;
   }

@@ -1,13 +1,16 @@
+/* eslint-disable max-lines-per-function */
 /* eslint-disable sort-imports */
 /* eslint-disable react/prop-types */
-import { faKey, faLock, faPenSquare, faUserCircle, faAddressBook, faPhone } from '@fortawesome/free-solid-svg-icons';
+import {
+  faKey, faLock, faPenSquare, faUserCircle, faAddressBook, faPhone
+} from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { farmerRegister } from '../../actions/auth';
 import { createMessage } from '../../actions/messages';
-import locations from '../../components/location';
+import locations from './location';
 
 export const SectionOne = () => (
   <div id="section1" className="section-icon">
@@ -77,7 +80,9 @@ export const SectionTwo = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    const { businessName, email, location, password, password2, phoneNumber } = inputs;
+    const {
+      businessName, email, location, password, password2, phoneNumber
+    } = inputs;
     // eslint-disable-next-line no-negated-condition
     if (password !== password2) {
       dispatch(createMessage({ passwordNotMatch: 'Passwords do not match' }));
@@ -92,7 +97,9 @@ export const SectionTwo = () => {
       dispatch(farmerRegister(newUser));
     }
   };
-  const { businessName, email, location, password, password2, phoneNumber } = inputs;
+  const {
+    businessName, email, location, password, password2, phoneNumber
+  } = inputs;
   return (
     <div id="section2" className="section-icon">
       <FormHead type="Farmer" />
