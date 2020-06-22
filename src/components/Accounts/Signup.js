@@ -1,6 +1,6 @@
 import React from 'react';
 // eslint-disable-next-line sort-imports
-import { SectionOne, SectionThree, SectionTwo } from '../containers/SignupSections/SectionOne';
+import { SectionOne, SectionThree, SectionTwo } from '../../containers/SignupSections/SectionOne';
 
 
 const Signup = () => (

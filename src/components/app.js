@@ -1,16 +1,14 @@
 /* eslint-disable sort-imports */
-import './dash.css';
 import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
-import Footer from './Footer';
-import Hompage from './Homepage';
-import { Login } from './Login';
-// import Navbar from './Navbar';
-import Password from './Password';
-import Dashboard from './Dashoard';
+import Footer from './layout/Footer';
+import Hompage from './homepage/Homepage';
+import { Login } from './Accounts/Login';
+import Password from './Accounts/Password';
+import Dashboard from './Accounts/Dashoard';
 import store from '../store';
 import Alerts from './layout/Alerts';
 import { loadUser } from '../actions/auth';
@@ -26,8 +24,10 @@ import Checkout from './orders/Checkout';
 import Thanks from './orders/Thanks';
 import AuthRoute from './layout/AuthRoute';
 import UserOrders from './orders/UserOrders';
-import Contacts from './Contact';
+import Contacts from './contact/Contact';
 import About from './about/About';
+import ChangePassword from './Accounts/ChangePassword';
+import CheckMail from './layout/CheckMail';
 
 const alertOptions = {
   position: 'top center',
@@ -57,10 +57,11 @@ class App extends Component {
                   <Route path="/signup/farmer" exact component={FarmerSignup} />
                   <Route path="/signup/customer" exact component={CustomerSignup} />
                   <Route path="/forgetpsw" exact component={Password} />
+                  <Route path="/password/reset" component={ChangePassword} />
                   <Route path="/contactus" exact component={Contacts} />
                   <Route path="/about" exact component={About} />
                   <Route path="/cart" exact component={CartItems} />
-                  <Route path="/aboutus" exact component={About} />
+                  <Route path="/checkmail" exact component={CheckMail} />
                   <AuthRoute path="/checkout" exact component={Checkout} />
                   <AuthRoute path="/thanks" component={Thanks} />
                   <AuthRoute path="/order/user" component={UserOrders} />

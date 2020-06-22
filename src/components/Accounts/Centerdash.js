@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line sort-imports
-import { getDailySales, getSalesReport } from '../actions/order';
-import ItemOrdered from './sales/DailySales';
-import Loader from './layout/Loader';
+import { getDailySales, getSalesReport } from '../../actions/order';
+import ItemOrdered from '../sales/DailySales';
+import Loader from '../layout/Loader';
 
 const Select = (props) => (
   <div className="form-group">
