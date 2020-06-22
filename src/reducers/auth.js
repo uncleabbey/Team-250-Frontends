@@ -1,6 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import {
   AUTH_ERROR,
+  CHANGE_PASSWORD,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
@@ -35,6 +36,7 @@ export default (state = initialState, action) => {
         isLoading: false,
         user: action.payload
       };
+    case CHANGE_PASSWORD:
     case LOGIN_SUCCESS:
     case REGISTER_SUCCESS:
       localStorage.setItem('token', action.payload.token);

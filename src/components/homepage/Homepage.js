@@ -4,11 +4,11 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts, setCurrentPage } from '../actions/product';
+import { getProducts, setCurrentPage } from '../../actions/product';
 // import PropTypes from 'prop-type';
-import Pagination from './products/Pagination';
-import Loader from './layout/Loader';
-import RenderProduct from './products/RenderProduct';
+import Pagination from '../products/Pagination';
+import Loader from '../layout/Loader';
+import RenderProduct from '../products/RenderProduct';
 
 
 const Homepage = () => {
